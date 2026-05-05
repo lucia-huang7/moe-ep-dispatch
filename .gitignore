@@ -1,0 +1,14 @@
+.venv*/
+__pycache__/
+.pytest_cache/
+*.pyc
+vendor/
+*.log
+.DS_Store
+._*
+*.so
+*.o
+build/
+dist/
+results/checkpoints/
+results/*.tmp

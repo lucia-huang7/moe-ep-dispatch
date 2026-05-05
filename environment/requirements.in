@@ -1,0 +1,7 @@
+torch==2.7.1
+numpy==2.2.6
+nvidia-nvshmem-cu12==3.3.9
+ninja==1.11.1.4
+pytest==8.3.5
+setuptools==75.8.0
+wheel==0.45.1
