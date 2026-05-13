@@ -1,0 +1,4301 @@
+{
+  "backend": "gloo",
+  "device": "cpu",
+  "torch": "2.9.1",
+  "platform": "Darwin",
+  "world_size": 3,
+  "cases": [
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 8.415776608927672e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 504
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 360,
+          "output_bytes": 360
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 8.415776608927672e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 504
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 360,
+          "output_bytes": 360
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 6.637526350772305e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 1764
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 1260,
+          "output_bytes": 360
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 6.637526350772305e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 1764
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 1260,
+          "output_bytes": 360
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 1.452754769815101e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 1764
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 1260,
+          "output_bytes": 360
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 1.452754769815101e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 1764
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 1260,
+          "output_bytes": 360
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 8.16394392089137e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 8.16394392089137e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 392
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 280,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 392
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 280,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.004001825186653818,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.004001825186653818,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0040631786530420655,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 882
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 630,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0040631786530420655,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 882
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 630,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.004271483217976879,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 882
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 630,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.004271483217976879,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 882
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 630,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.005101863733754541,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 168,
+          "output_bytes": 126
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 90,
+          "output_bytes": 120
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.005101863733754541,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 168,
+          "output_bytes": 126
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 90,
+          "output_bytes": 120
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 196
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 140,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 196
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 140,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00043590612699007103,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00043590612699007103,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0004877448081970215,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 882
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 630,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0004877448081970215,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 882
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 630,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0006038985829679433,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 882
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 630,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0006038985829679433,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 882
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 630,
+          "output_bytes": 180
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0004716361660257462,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 168,
+          "output_bytes": 126
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 90,
+          "output_bytes": 120
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0004716361660257462,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 168,
+          "output_bytes": 126
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 90,
+          "output_bytes": 120
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 196
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 140,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 196
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 140,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 0,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 7.057076256700157e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 672
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 480,
+          "output_bytes": 420
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 7.057076256700157e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 672
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 480,
+          "output_bytes": 420
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 8.092392955738603e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 420
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 8.092392955738603e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 420
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 1.2172786956199388e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 420
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 1.2172786956199388e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 420
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 4.920181939649382e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 392,
+          "output_bytes": 560
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 400,
+          "output_bytes": 280
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 4.920181939649382e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 392,
+          "output_bytes": 560
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 400,
+          "output_bytes": 280
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 7.057076256700157e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 448
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 320,
+          "output_bytes": 420
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 7.057076256700157e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 448
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 320,
+          "output_bytes": 420
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.004015763687462481,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 336
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 240,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.004015763687462481,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 336
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 240,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0020008549355452487,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0020008549355452487,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0047130283441561005,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0047130283441561005,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0030573426093276623,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 196,
+          "output_bytes": 280
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 200,
+          "output_bytes": 140
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0030573426093276623,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 196,
+          "output_bytes": 280
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 200,
+          "output_bytes": 140
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.004015763687462481,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 224
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 160,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.004015763687462481,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 224
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 160,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00046098437944841475,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 336
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 240,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00046098437944841475,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 336
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 240,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00024256728736050254,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00024256728736050254,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00034251275499186384,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00034251275499186384,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0005389237263824231,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 196,
+          "output_bytes": 280
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 200,
+          "output_bytes": 140
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0005389237263824231,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 196,
+          "output_bytes": 280
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 200,
+          "output_bytes": 140
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00046098437944841475,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 224
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 160,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00046098437944841475,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 224
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 160,
+          "output_bytes": 210
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 8.247616500867139e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 672,
+          "output_bytes": 588
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 420,
+          "output_bytes": 480
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 8.247616500867139e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 672,
+          "output_bytes": 588
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 420,
+          "output_bytes": 480
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 9.617143903462022e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 672,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 480
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 9.617143903462022e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 672,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 480
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 9.980218962368781e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 672,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 480
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 9.980218962368781e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 672,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 480
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 9.168152736993562e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 448,
+          "output_bytes": 364
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 260,
+          "output_bytes": 320
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 9.168152736993562e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 448,
+          "output_bytes": 364
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 260,
+          "output_bytes": 320
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 8.03117559122768e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 672,
+          "output_bytes": 420
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 300,
+          "output_bytes": 480
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 8.03117559122768e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 672,
+          "output_bytes": 420
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 300,
+          "output_bytes": 480
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00446834128131357,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 294
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 210,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00446834128131357,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 294
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 210,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.005352062013685099,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.005352062013685099,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0034099593038234843,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0034099593038234843,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.003569630952847014,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 224,
+          "output_bytes": 182
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 130,
+          "output_bytes": 160
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.003569630952847014,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 224,
+          "output_bytes": 182
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 130,
+          "output_bytes": 160
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00446834128131357,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 210
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 150,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00446834128131357,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 210
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 150,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.000625960937141512,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 294
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 210,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.000625960937141512,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 294
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 210,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0006985421267824421,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0006985421267824421,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0005498306504496675,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0005498306504496675,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00040885265819723404,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 224,
+          "output_bytes": 182
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 130,
+          "output_bytes": 160
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00040885265819723404,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 224,
+          "output_bytes": 182
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 130,
+          "output_bytes": 160
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.000625960937141512,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 210
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 150,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.000625960937141512,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 210
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 150,
+          "output_bytes": 240
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 24,
+          "output_bytes": 24
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "world_size": 3,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 48,
+          "output_bytes": 48
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ]
+    }
+  ],
+  "independent_contexts_passed": true,
+  "wrong_expert_negative_control_detected": true,
+  "source_hashes": {
+    "moe_lab/__init__.py": "50d69c675bcebd066f4578f2e6f94488aa85331ab294a7d2eb3697626f23619f",
+    "moe_lab/dispatch.py": "914a3a54b0043e3fa0f12030a3680f85c95c12dc3b9c3c6edb5d90d4e3c978d0",
+    "moe_lab/reference.py": "6e84300311066475906870cbb15de278d54fb52d0c96efc15a8ebd425333632a",
+    "scripts/validate_distributed.py": "e5e27ed0b13b2ed276814cbb1a822a7ea010531a24307dce16a78b1d86329bb9"
+  }
+}
