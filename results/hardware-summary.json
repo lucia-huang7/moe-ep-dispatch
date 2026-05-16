@@ -1,0 +1,289 @@
+{
+  "platform": "Linux-6.11.0-1016-nvidia-x86_64-with-glibc2.39",
+  "gpu_count": 8,
+  "gpu_model": "NVIDIA H100 SXM",
+  "topology": "NV18 across all eight GPU pairs",
+  "peer_access": [
+    [
+      {
+        "status": 0,
+        "can_access": false
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      }
+    ],
+    [
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": false
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      }
+    ],
+    [
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": false
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      }
+    ],
+    [
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": false
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      }
+    ],
+    [
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": false
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      }
+    ],
+    [
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": false
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      }
+    ],
+    [
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": false
+      },
+      {
+        "status": 0,
+        "can_access": true
+      }
+    ],
+    [
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": true
+      },
+      {
+        "status": 0,
+        "can_access": false
+      }
+    ]
+  ],
+  "active_nvlinks_per_gpu": 18,
+  "active_infiniband_ports": 8,
+  "infiniband_rate_gbit_per_s": 400,
+  "driver": "570.211.01",
+  "cuda_compiler": "12.8.93",
+  "enable_stream_mem_ops": true,
+  "gdrdrv_loaded": true,
+  "nvidia_peermem_loaded": true,
+  "source_record_sha256": "d96e54d63e92622a91c915271cfc7434ea469a775ca1f048a1575e87e960a785"
+}

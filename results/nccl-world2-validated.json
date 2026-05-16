@@ -1,0 +1,3138 @@
+{
+  "backend": "nccl",
+  "device": "cuda",
+  "torch": "2.7.1+cu126",
+  "platform": "Linux",
+  "world_size": 2,
+  "cases": [
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 1.0480549506031167e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 504
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 360,
+          "output_bytes": 360
+        }
+      ],
+      "baseline_optimized_max_abs_error": 1.1920928955078125e-07,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 1.0480549506031167e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 504
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 360,
+          "output_bytes": 360
+        }
+      ],
+      "baseline_optimized_max_abs_error": 1.1920928955078125e-07,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 7.44566190924445e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 1092
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 780,
+          "output_bytes": 360
+        }
+      ],
+      "baseline_optimized_max_abs_error": 5.960464477539063e-08,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 7.44566190924445e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 1092
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 780,
+          "output_bytes": 360
+        }
+      ],
+      "baseline_optimized_max_abs_error": 5.960464477539063e-08,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 1.0163251662476114e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 1092
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 780,
+          "output_bytes": 360
+        }
+      ],
+      "baseline_optimized_max_abs_error": 1.1920928955078125e-07,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 1.0163251662476114e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 504,
+          "output_bytes": 1092
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 780,
+          "output_bytes": 360
+        }
+      ],
+      "baseline_optimized_max_abs_error": 1.1920928955078125e-07,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 9.210370777168464e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 336
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 240,
+          "output_bytes": 240
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 9.210370777168464e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 336,
+          "output_bytes": 336
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 240,
+          "output_bytes": 240
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 280
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 200,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 280
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 200,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.006098687071435904,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.006098687071435904,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.002455233009615476,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 546
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 390,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.002455233009615476,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 546
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 390,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.005695801841902437,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 546
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 390,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.005695801841902437,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 546
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 390,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.007974347757055966,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 168,
+          "output_bytes": 168
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 120,
+          "output_bytes": 120
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.007974347757055966,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 168,
+          "output_bytes": 168
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 120,
+          "output_bytes": 120
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 140
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 100,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 140
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 100,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0007039582640997466,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0007039582640997466,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 252
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 180,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0003283269428062674,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 546
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 390,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0003283269428062674,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 546
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 390,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00044161070469650454,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 546
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 390,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00044161070469650454,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 252,
+          "output_bytes": 546
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 390,
+          "output_bytes": 180
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.000634189469083335,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 168,
+          "output_bytes": 168
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 120,
+          "output_bytes": 120
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.000634189469083335,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 168,
+          "output_bytes": 168
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 120,
+          "output_bytes": 120
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 140
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 100,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 140
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 100,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 0,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 5.285888093897739e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 588
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 420,
+          "output_bytes": 420
+        }
+      ],
+      "baseline_optimized_max_abs_error": 5.960464477539063e-08,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 6.085163262170568e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 588
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 420,
+          "output_bytes": 420
+        }
+      ],
+      "baseline_optimized_max_abs_error": 5.960464477539063e-08,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 5.0714703436760544e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 420
+        }
+      ],
+      "baseline_optimized_max_abs_error": 5.960464477539063e-08,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 5.6128119041432e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 420
+        }
+      ],
+      "baseline_optimized_max_abs_error": 5.960464477539063e-08,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 1.9452608945869088e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 420
+        }
+      ],
+      "baseline_optimized_max_abs_error": 1.1920928955078125e-07,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 1.9452608945869088e-07,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 420
+        }
+      ],
+      "baseline_optimized_max_abs_error": 1.1920928955078125e-07,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 5.336119834886688e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 392,
+          "output_bytes": 392
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 280,
+          "output_bytes": 280
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 5.336119834886688e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 392,
+          "output_bytes": 392
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 280,
+          "output_bytes": 280
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 5.285888093897739e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 308
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 220,
+          "output_bytes": 420
+        }
+      ],
+      "baseline_optimized_max_abs_error": 5.960464477539063e-08,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 6.085163262170568e-08,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 588,
+          "output_bytes": 308
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 220,
+          "output_bytes": 420
+        }
+      ],
+      "baseline_optimized_max_abs_error": 5.960464477539063e-08,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float32",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 2e-06,
+      "baseline_optimized_rtol": 2e-06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0024969845970641558,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 294
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 210,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0024969845970641558,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 294
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 210,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0032996892515484433,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0032996892515484433,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.004737662292647826,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.004737662292647826,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0026436750310576684,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 196,
+          "output_bytes": 196
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 140,
+          "output_bytes": 140
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0026436750310576684,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 196,
+          "output_bytes": 196
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 140,
+          "output_bytes": 140
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0024969845970641558,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 154
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 110,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0024969845970641558,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 154
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 110,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.bfloat16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.06,
+      "rtol": 0.06,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.06,
+      "baseline_optimized_rtol": 0.06
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.000330575338423289,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 294
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 210,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "balanced",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.000330575338423289,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 294
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 210,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00035402611611445867,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "duplicates",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00035402611611445867,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.000602521951572843,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "skewed",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.000602521951572843,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.00042311338280520694,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 196,
+          "output_bytes": 196
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 140,
+          "output_bytes": 140
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.00042311338280520694,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 196,
+          "output_bytes": 196
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 140,
+          "output_bytes": 140
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "all_dropped",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.000330575338423289,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 154
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 110,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "empty_rank",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.000330575338423289,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 294,
+          "output_bytes": 154
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 110,
+          "output_bytes": 210
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": false,
+      "collectives": 5,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_rank_counts",
+          "input_bytes": 16,
+          "output_bytes": 16
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    },
+    {
+      "rank": 1,
+      "world_size": 2,
+      "dtype": "torch.float16",
+      "scenario": "all_empty",
+      "optimized": true,
+      "collectives": 3,
+      "passed": true,
+      "max_abs_error": 0.0,
+      "atol": 0.008,
+      "rtol": 0.008,
+      "local_collective_payloads": [
+        {
+          "label": "dispatch_expert_counts",
+          "input_bytes": 32,
+          "output_bytes": 32
+        },
+        {
+          "label": "dispatch_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        },
+        {
+          "label": "combine_tokens",
+          "input_bytes": 0,
+          "output_bytes": 0
+        }
+      ],
+      "baseline_optimized_max_abs_error": 0.0,
+      "baseline_optimized_atol": 0.008,
+      "baseline_optimized_rtol": 0.008
+    }
+  ],
+  "independent_contexts_passed": true,
+  "wrong_expert_negative_control_detected": true,
+  "source_hashes": {
+    "moe_lab/.___init__.py": "e651129d384731427653173b04190b17cf381e845e9fe22d2ec3af1e8b10d2cd",
+    "moe_lab/._deepep_backend.py": "e651129d384731427653173b04190b17cf381e845e9fe22d2ec3af1e8b10d2cd",
+    "moe_lab/._dispatch.py": "e651129d384731427653173b04190b17cf381e845e9fe22d2ec3af1e8b10d2cd",
+    "moe_lab/._reference.py": "e651129d384731427653173b04190b17cf381e845e9fe22d2ec3af1e8b10d2cd",
+    "moe_lab/__init__.py": "50d69c675bcebd066f4578f2e6f94488aa85331ab294a7d2eb3697626f23619f",
+    "moe_lab/deepep_backend.py": "fbfeaf021d7ea15d54a530d2b6433e20dd5b89056fe5dc41b48822206601e1cb",
+    "moe_lab/dispatch.py": "914a3a54b0043e3fa0f12030a3680f85c95c12dc3b9c3c6edb5d90d4e3c978d0",
+    "moe_lab/reference.py": "6e84300311066475906870cbb15de278d54fb52d0c96efc15a8ebd425333632a",
+    "scripts/._audit_dependency_dates.py": "e651129d384731427653173b04190b17cf381e845e9fe22d2ec3af1e8b10d2cd",
+    "scripts/._preflight_gpu.py": "e651129d384731427653173b04190b17cf381e845e9fe22d2ec3af1e8b10d2cd",
+    "scripts/._validate_deepep.py": "e651129d384731427653173b04190b17cf381e845e9fe22d2ec3af1e8b10d2cd",
+    "scripts/._validate_distributed.py": "e651129d384731427653173b04190b17cf381e845e9fe22d2ec3af1e8b10d2cd",
+    "scripts/audit_dependency_dates.py": "9aaf01f811033dfda3619c32281dbafaf683db87f66d6dffc8b6e1ff4f6460a5",
+    "scripts/preflight_gpu.py": "18d88f1010f0d7483a546f5a4fbde629284adae1dc73b5ade4324b8cb814e4a1",
+    "scripts/validate_deepep.py": "c40e8ca173d49b5cca196f895fc0a101e85e8f97279ff26719330461c1a03c3d",
+    "scripts/validate_distributed.py": "8c4c854105ec479772d7baf547a881b84a0cae42cefe0bfacfe186d16e09789c",
+    "scripts/validate_gpu_links.py": "c6664e708009f034c92c0ed4da97cf51f3db345fc7a1897fbb1fe646eae0c2d6"
+  }
+}
