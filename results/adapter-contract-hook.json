@@ -1,0 +1,1421 @@
+{
+  "world_size": 8,
+  "completion": "hook",
+  "stream": "non_default",
+  "allow_nvlink": false,
+  "native_build": {
+    "upstream_commit": "9af0e0d0e74f3577af1979c9b9e1ac2cad0104ee",
+    "source_diff_sha256": "50583a9fcf1a6929473b774afad42986163e7b84fb5a4841b8d1686f561685b0",
+    "binding_source_sha256": "86c224d7e93c27d4859b9e2cd15bd2f8ae91b76380aa52c58affdb1083590e73",
+    "extension_sha256": "33b76623d244948383bf3521464c24a2b88ae8ddbcc67c710305cf64ca7f9649",
+    "extension_filename": "deep_ep_cpp.cpython-312-x86_64-linux-gnu.so",
+    "patch_sha256": "3225afd14c821e63377dd24ce77abfea0b9037b83661d6994aee8c15925bc52f",
+    "torch": "2.7.1+cu126",
+    "cuda_runtime": "12.6",
+    "nvshmem": "3.3.9",
+    "python": "3.12.3",
+    "requirements_sha256": "84377015d61c3db99a02a9f880d7e7300edd4bd2dc5fa7222203f69673b8a635"
+  },
+  "cases": [
+    {
+      "rank": 0,
+      "case": "balanced/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "balanced/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "balanced/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "balanced/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "balanced/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "balanced/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "balanced/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "skewed/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "skewed/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "skewed/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "skewed/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "skewed/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "skewed/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "skewed/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "empty_rank/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "empty_rank/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "empty_rank/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "empty_rank/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "empty_rank/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "empty_rank/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "empty_rank/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_empty/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_empty/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_empty/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_empty/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_empty/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_empty/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_empty/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_dropped/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_dropped/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_dropped/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_dropped/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_dropped/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_dropped/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 0,
+      "case": "all_dropped/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "balanced/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "balanced/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "balanced/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "balanced/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "balanced/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "balanced/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "balanced/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "skewed/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "skewed/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "skewed/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "skewed/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "skewed/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "skewed/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "skewed/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "empty_rank/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "empty_rank/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "empty_rank/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "empty_rank/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "empty_rank/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "empty_rank/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "empty_rank/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_empty/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_empty/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_empty/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_empty/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_empty/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_empty/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_empty/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_dropped/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_dropped/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_dropped/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_dropped/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_dropped/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_dropped/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "case": "all_dropped/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "balanced/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "balanced/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "balanced/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "balanced/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "balanced/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "balanced/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "balanced/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "skewed/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "skewed/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "skewed/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "skewed/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "skewed/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "skewed/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "skewed/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "empty_rank/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "empty_rank/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "empty_rank/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "empty_rank/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "empty_rank/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "empty_rank/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "empty_rank/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_empty/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_empty/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_empty/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_empty/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_empty/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_empty/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_empty/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_dropped/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_dropped/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_dropped/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_dropped/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_dropped/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_dropped/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "case": "all_dropped/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "balanced/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "balanced/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "balanced/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "balanced/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "balanced/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "balanced/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "balanced/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "skewed/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "skewed/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "skewed/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "skewed/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "skewed/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "skewed/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "skewed/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "empty_rank/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "empty_rank/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "empty_rank/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "empty_rank/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "empty_rank/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "empty_rank/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "empty_rank/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_empty/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_empty/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_empty/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_empty/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_empty/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_empty/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_empty/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_dropped/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_dropped/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_dropped/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_dropped/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_dropped/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_dropped/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "case": "all_dropped/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "balanced/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "balanced/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "balanced/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "balanced/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "balanced/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "balanced/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "balanced/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "skewed/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "skewed/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "skewed/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "skewed/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "skewed/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "skewed/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "skewed/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "empty_rank/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "empty_rank/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "empty_rank/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "empty_rank/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "empty_rank/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "empty_rank/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "empty_rank/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_empty/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_empty/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_empty/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_empty/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_empty/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_empty/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_empty/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_dropped/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_dropped/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_dropped/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_dropped/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_dropped/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_dropped/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "case": "all_dropped/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "balanced/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "balanced/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "balanced/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "balanced/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "balanced/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "balanced/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "balanced/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "skewed/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "skewed/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "skewed/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "skewed/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "skewed/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "skewed/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "skewed/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "empty_rank/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "empty_rank/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "empty_rank/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "empty_rank/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "empty_rank/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "empty_rank/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "empty_rank/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_empty/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_empty/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_empty/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_empty/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_empty/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_empty/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_empty/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_dropped/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_dropped/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_dropped/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_dropped/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_dropped/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_dropped/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "case": "all_dropped/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "balanced/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "balanced/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "balanced/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "balanced/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "balanced/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "balanced/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "balanced/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "skewed/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "skewed/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "skewed/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "skewed/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "skewed/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "skewed/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "skewed/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "empty_rank/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "empty_rank/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "empty_rank/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "empty_rank/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "empty_rank/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "empty_rank/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "empty_rank/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_empty/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_empty/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_empty/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_empty/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_empty/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_empty/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_empty/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_dropped/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_dropped/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_dropped/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_dropped/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_dropped/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_dropped/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 6,
+      "case": "all_dropped/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "balanced/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "balanced/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "balanced/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "balanced/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "balanced/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "balanced/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "balanced/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "skewed/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "skewed/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "skewed/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "skewed/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "skewed/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "skewed/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "skewed/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "empty_rank/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "empty_rank/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "empty_rank/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "empty_rank/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "empty_rank/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "empty_rank/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "empty_rank/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_empty/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_empty/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_empty/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_empty/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_empty/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_empty/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_empty/repeated_combine",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_dropped/overlapping_dispatch",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_dropped/premature_close",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_dropped/foreign_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_dropped/unreserved_output",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_dropped/poisoned_padding",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_dropped/consumed_context",
+      "passed": true
+    },
+    {
+      "rank": 7,
+      "case": "all_dropped/repeated_combine",
+      "passed": true
+    }
+  ]
+}
