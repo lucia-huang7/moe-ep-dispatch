@@ -1,0 +1,2898 @@
+{
+  "aggregation": "Median of three fresh-process medians; whiskers span these three medians, not a confidence interval",
+  "measurement": "Worst-rank synchronized host wall time for complete dispatch, BF16 expert MLP and combine; control barriers excluded",
+  "scaling": "Per-rank tokens and experts held fixed as world size increases; total tokens and expert count increase",
+  "source_sha256": {
+    "pipeline-packed-world2-rep1.json": "10a14bd336157c6ac8479cf6a708197bb9e99f661c73263aefcb54f10c047f3d",
+    "pipeline-packed-world2-rep2.json": "3cd7d36c9376cd5bd94b44bdd93b498d1d94fa01878c0d63094e3ead654169ec",
+    "pipeline-packed-world2-rep3.json": "d3334f8ab4408497185b31d4e03ee37d4d8ac826e26177c2104c0838f25fbaa2",
+    "pipeline-packed-world4-rep1.json": "814cd0369be3aa396942373a41498d3705cfae6c220233d76697e557212eb877",
+    "pipeline-packed-world4-rep2.json": "623b649227f0810318060a000e8d73c1dbbb54e1ee46b36eb389910353712e59",
+    "pipeline-packed-world4-rep3.json": "add1e7278e461e04b361ebf2d79a0413a8b6236875e8018d979b04108dfe1937",
+    "pipeline-packed-world8-rep1.json": "6de3d90bd8aeb5008810dbb78a31b73d57588dd64336ca921924ed7212370ea2",
+    "pipeline-packed-world8-rep2.json": "2c46d612bd9944e4360967ce92e2fafa3f3ca6fbf662dccb2eb1ff786d0d7dc1",
+    "pipeline-packed-world8-rep3.json": "5797d99837dfe93b825c9bc35f0c08a61ae82e8b64c3b81db6fb29ff16fb3384"
+  },
+  "records": [
+    {
+      "world_size": 2,
+      "hidden": 2048,
+      "tokens_rank_zero": 16,
+      "scenario": "balanced",
+      "total_input_tokens": 35,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3818885,
+          "process_medians_ms": [
+            1.3818885,
+            1.363635,
+            1.3966755000000002
+          ],
+          "range_min_ms": 1.363635,
+          "range_max_ms": 1.3966755000000002,
+          "global_input_tokens_per_second": 25327.65849053668
+        },
+        "optimized_grouped": {
+          "median_ms": 1.238558,
+          "process_medians_ms": [
+            1.238558,
+            1.214626,
+            1.2468515
+          ],
+          "range_min_ms": 1.214626,
+          "range_max_ms": 1.2468515,
+          "global_input_tokens_per_second": 28258.66854842486
+        },
+        "native_grouped": {
+          "median_ms": 0.831627,
+          "process_medians_ms": [
+            0.8317019999999999,
+            0.814939,
+            0.831627
+          ],
+          "range_min_ms": 0.814939,
+          "range_max_ms": 0.8317019999999999,
+          "global_input_tokens_per_second": 42086.17565326763
+        },
+        "native_packed": {
+          "median_ms": 0.6528434999999999,
+          "process_medians_ms": [
+            0.6528434999999999,
+            0.6399445,
+            0.6556295000000001
+          ],
+          "range_min_ms": 0.6399445,
+          "range_max_ms": 0.6556295000000001,
+          "global_input_tokens_per_second": 53611.62361270351
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.372074157936762,
+      "packed_vs_previous_native_latency_reduction_percent": 21.498039385445654,
+      "packed_vs_baseline_speedup": 2.116722461049241
+    },
+    {
+      "world_size": 2,
+      "hidden": 2048,
+      "tokens_rank_zero": 16,
+      "scenario": "skewed",
+      "total_input_tokens": 35,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.216054,
+          "process_medians_ms": [
+            1.1910115000000001,
+            1.216054,
+            1.2310854999999998
+          ],
+          "range_min_ms": 1.1910115000000001,
+          "range_max_ms": 1.2310854999999998,
+          "global_input_tokens_per_second": 28781.61660584152
+        },
+        "optimized_grouped": {
+          "median_ms": 1.0928520000000002,
+          "process_medians_ms": [
+            1.062035,
+            1.0928520000000002,
+            1.0957865
+          ],
+          "range_min_ms": 1.062035,
+          "range_max_ms": 1.0957865,
+          "global_input_tokens_per_second": 32026.2945028238
+        },
+        "native_grouped": {
+          "median_ms": 0.6978,
+          "process_medians_ms": [
+            0.682564,
+            0.6978,
+            0.7098665
+          ],
+          "range_min_ms": 0.682564,
+          "range_max_ms": 0.7098665,
+          "global_input_tokens_per_second": 50157.63829177415
+        },
+        "native_packed": {
+          "median_ms": 0.5399295,
+          "process_medians_ms": [
+            0.533908,
+            0.5399295,
+            0.5402724999999999
+          ],
+          "range_min_ms": 0.533908,
+          "range_max_ms": 0.5402724999999999,
+          "global_input_tokens_per_second": 64823.27785386796
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.131293511636807,
+      "packed_vs_previous_native_latency_reduction_percent": 22.624032674118666,
+      "packed_vs_baseline_speedup": 2.25224589506593
+    },
+    {
+      "world_size": 2,
+      "hidden": 2048,
+      "tokens_rank_zero": 64,
+      "scenario": "balanced",
+      "total_input_tokens": 131,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3508585,
+          "process_medians_ms": [
+            1.3508585,
+            1.3285559999999998,
+            1.3668105
+          ],
+          "range_min_ms": 1.3285559999999998,
+          "range_max_ms": 1.3668105,
+          "global_input_tokens_per_second": 96975.36788642185
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2206800000000002,
+          "process_medians_ms": [
+            1.2206800000000002,
+            1.1976040000000001,
+            1.2327015000000001
+          ],
+          "range_min_ms": 1.1976040000000001,
+          "range_max_ms": 1.2327015000000001,
+          "global_input_tokens_per_second": 107317.23301766226
+        },
+        "native_grouped": {
+          "median_ms": 0.8403895,
+          "process_medians_ms": [
+            0.8403895,
+            0.832911,
+            0.8516405
+          ],
+          "range_min_ms": 0.832911,
+          "range_max_ms": 0.8516405,
+          "global_input_tokens_per_second": 155880.10083419652
+        },
+        "native_packed": {
+          "median_ms": 0.660722,
+          "process_medians_ms": [
+            0.660722,
+            0.6479435,
+            0.66499
+          ],
+          "range_min_ms": 0.6479435,
+          "range_max_ms": 0.66499,
+          "global_input_tokens_per_second": 198267.95535792664
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.636723609467591,
+      "packed_vs_previous_native_latency_reduction_percent": 21.37907482185344,
+      "packed_vs_baseline_speedup": 2.0445187234570663
+    },
+    {
+      "world_size": 2,
+      "hidden": 2048,
+      "tokens_rank_zero": 64,
+      "scenario": "skewed",
+      "total_input_tokens": 131,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.2184575,
+          "process_medians_ms": [
+            1.198647,
+            1.2184575,
+            1.2223685
+          ],
+          "range_min_ms": 1.198647,
+          "range_max_ms": 1.2223685,
+          "global_input_tokens_per_second": 107512.98260300422
+        },
+        "optimized_grouped": {
+          "median_ms": 1.09045,
+          "process_medians_ms": [
+            1.0729335,
+            1.09045,
+            1.097114
+          ],
+          "range_min_ms": 1.0729335,
+          "range_max_ms": 1.097114,
+          "global_input_tokens_per_second": 120133.88967857308
+        },
+        "native_grouped": {
+          "median_ms": 0.7128135,
+          "process_medians_ms": [
+            0.7077455,
+            0.7128135,
+            0.7237225
+          ],
+          "range_min_ms": 0.7077455,
+          "range_max_ms": 0.7237225,
+          "global_input_tokens_per_second": 183778.78645676604
+        },
+        "native_packed": {
+          "median_ms": 0.5519585,
+          "process_medians_ms": [
+            0.549013,
+            0.5519585,
+            0.5557655
+          ],
+          "range_min_ms": 0.549013,
+          "range_max_ms": 0.5557655,
+          "global_input_tokens_per_second": 237336.6838267732
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.50570085538478,
+      "packed_vs_previous_native_latency_reduction_percent": 22.56621121794129,
+      "packed_vs_baseline_speedup": 2.207516507128706
+    },
+    {
+      "world_size": 2,
+      "hidden": 2048,
+      "tokens_rank_zero": 256,
+      "scenario": "balanced",
+      "total_input_tokens": 515,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3676430000000002,
+          "process_medians_ms": [
+            1.3676430000000002,
+            1.345957,
+            1.370499
+          ],
+          "range_min_ms": 1.345957,
+          "range_max_ms": 1.370499,
+          "global_input_tokens_per_second": 376560.25731861306
+        },
+        "optimized_grouped": {
+          "median_ms": 1.233438,
+          "process_medians_ms": [
+            1.2346154999999999,
+            1.2010595,
+            1.233438
+          ],
+          "range_min_ms": 1.2010595,
+          "range_max_ms": 1.2346154999999999,
+          "global_input_tokens_per_second": 417532.1337594593
+        },
+        "native_grouped": {
+          "median_ms": 0.896468,
+          "process_medians_ms": [
+            0.896468,
+            0.886379,
+            0.908205
+          ],
+          "range_min_ms": 0.886379,
+          "range_max_ms": 0.908205,
+          "global_input_tokens_per_second": 574476.7242110148
+        },
+        "native_packed": {
+          "median_ms": 0.7125455,
+          "process_medians_ms": [
+            0.7125455,
+            0.702002,
+            0.7289950000000001
+          ],
+          "range_min_ms": 0.702002,
+          "range_max_ms": 0.7289950000000001,
+          "global_input_tokens_per_second": 722760.8622887941
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.812867831736805,
+      "packed_vs_previous_native_latency_reduction_percent": 20.51634860363114,
+      "packed_vs_baseline_speedup": 1.9193763766664727
+    },
+    {
+      "world_size": 2,
+      "hidden": 2048,
+      "tokens_rank_zero": 256,
+      "scenario": "skewed",
+      "total_input_tokens": 515,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.2087485,
+          "process_medians_ms": [
+            1.2087485,
+            1.1818055,
+            1.233773
+          ],
+          "range_min_ms": 1.1818055,
+          "range_max_ms": 1.233773,
+          "global_input_tokens_per_second": 426060.508037859
+        },
+        "optimized_grouped": {
+          "median_ms": 1.079746,
+          "process_medians_ms": [
+            1.079746,
+            1.0519384999999999,
+            1.1099425
+          ],
+          "range_min_ms": 1.0519384999999999,
+          "range_max_ms": 1.1099425,
+          "global_input_tokens_per_second": 476964.0267248037
+        },
+        "native_grouped": {
+          "median_ms": 0.7842165000000001,
+          "process_medians_ms": [
+            0.7842165000000001,
+            0.777114,
+            0.810034
+          ],
+          "range_min_ms": 0.777114,
+          "range_max_ms": 0.810034,
+          "global_input_tokens_per_second": 656706.4069679737
+        },
+        "native_packed": {
+          "median_ms": 0.6386735,
+          "process_medians_ms": [
+            0.6386735,
+            0.6302055,
+            0.6476740000000001
+          ],
+          "range_min_ms": 0.6302055,
+          "range_max_ms": 0.6476740000000001,
+          "global_input_tokens_per_second": 806358.8046161302
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.67240207536968,
+      "packed_vs_previous_native_latency_reduction_percent": 18.559033124143664,
+      "packed_vs_baseline_speedup": 1.8925922243525055
+    },
+    {
+      "world_size": 2,
+      "hidden": 2048,
+      "tokens_rank_zero": 512,
+      "scenario": "balanced",
+      "total_input_tokens": 1027,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3824830000000001,
+          "process_medians_ms": [
+            1.3824830000000001,
+            1.356426,
+            1.3825635
+          ],
+          "range_min_ms": 1.356426,
+          "range_max_ms": 1.3825635,
+          "global_input_tokens_per_second": 742866.2775600133
+        },
+        "optimized_grouped": {
+          "median_ms": 1.240305,
+          "process_medians_ms": [
+            1.240305,
+            1.2130955,
+            1.2502235000000002
+          ],
+          "range_min_ms": 1.2130955,
+          "range_max_ms": 1.2502235000000002,
+          "global_input_tokens_per_second": 828022.1397156345
+        },
+        "native_grouped": {
+          "median_ms": 0.9946619999999999,
+          "process_medians_ms": [
+            0.9946619999999999,
+            0.9713525000000001,
+            0.9969305
+          ],
+          "range_min_ms": 0.9713525000000001,
+          "range_max_ms": 0.9969305,
+          "global_input_tokens_per_second": 1032511.5466359428
+        },
+        "native_packed": {
+          "median_ms": 0.812318,
+          "process_medians_ms": [
+            0.812318,
+            0.797938,
+            0.8163785
+          ],
+          "range_min_ms": 0.797938,
+          "range_max_ms": 0.8163785,
+          "global_input_tokens_per_second": 1264283.199436674
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.284249426575231,
+      "packed_vs_previous_native_latency_reduction_percent": 18.332257591020863,
+      "packed_vs_baseline_speedup": 1.7018987637846263
+    },
+    {
+      "world_size": 2,
+      "hidden": 2048,
+      "tokens_rank_zero": 512,
+      "scenario": "skewed",
+      "total_input_tokens": 1027,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.2455705,
+          "process_medians_ms": [
+            1.2016535,
+            1.2728225,
+            1.2455705
+          ],
+          "range_min_ms": 1.2016535,
+          "range_max_ms": 1.2728225,
+          "global_input_tokens_per_second": 824521.7753631771
+        },
+        "optimized_grouped": {
+          "median_ms": 1.1059525,
+          "process_medians_ms": [
+            1.0798465,
+            1.1278454999999998,
+            1.1059525
+          ],
+          "range_min_ms": 1.0798465,
+          "range_max_ms": 1.1278454999999998,
+          "global_input_tokens_per_second": 928611.3101602466
+        },
+        "native_grouped": {
+          "median_ms": 0.9358964999999999,
+          "process_medians_ms": [
+            0.9204575,
+            0.9522865,
+            0.9358964999999999
+          ],
+          "range_min_ms": 0.9204575,
+          "range_max_ms": 0.9522865,
+          "global_input_tokens_per_second": 1097343.5630969878
+        },
+        "native_packed": {
+          "median_ms": 0.779086,
+          "process_medians_ms": [
+            0.76566,
+            0.7893465,
+            0.779086
+          ],
+          "range_min_ms": 0.76566,
+          "range_max_ms": 0.7893465,
+          "global_input_tokens_per_second": 1318211.3399547676
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.20916078214762,
+      "packed_vs_previous_native_latency_reduction_percent": 16.755111275659218,
+      "packed_vs_baseline_speedup": 1.5987586736252482
+    },
+    {
+      "world_size": 2,
+      "hidden": 7168,
+      "tokens_rank_zero": 16,
+      "scenario": "balanced",
+      "total_input_tokens": 35,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.4026375,
+          "process_medians_ms": [
+            1.4007515000000001,
+            1.4125480000000001,
+            1.4026375
+          ],
+          "range_min_ms": 1.4007515000000001,
+          "range_max_ms": 1.4125480000000001,
+          "global_input_tokens_per_second": 24952.990348539806
+        },
+        "optimized_grouped": {
+          "median_ms": 1.267054,
+          "process_medians_ms": [
+            1.267028,
+            1.267054,
+            1.270138
+          ],
+          "range_min_ms": 1.267028,
+          "range_max_ms": 1.270138,
+          "global_input_tokens_per_second": 27623.132084346842
+        },
+        "native_grouped": {
+          "median_ms": 0.8742455,
+          "process_medians_ms": [
+            0.8742455,
+            0.879685,
+            0.8731225
+          ],
+          "range_min_ms": 0.8731225,
+          "range_max_ms": 0.879685,
+          "global_input_tokens_per_second": 40034.521195705325
+        },
+        "native_packed": {
+          "median_ms": 0.6885775000000001,
+          "process_medians_ms": [
+            0.6885775000000001,
+            0.6830404999999999,
+            0.696422
+          ],
+          "range_min_ms": 0.6830404999999999,
+          "range_max_ms": 0.696422,
+          "global_input_tokens_per_second": 50829.42733388761
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.666325048346424,
+      "packed_vs_previous_native_latency_reduction_percent": 21.23751280389775,
+      "packed_vs_baseline_speedup": 2.0370074537724507
+    },
+    {
+      "world_size": 2,
+      "hidden": 7168,
+      "tokens_rank_zero": 16,
+      "scenario": "skewed",
+      "total_input_tokens": 35,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.265868,
+          "process_medians_ms": [
+            1.265868,
+            1.275108,
+            1.2655555
+          ],
+          "range_min_ms": 1.2655555,
+          "range_max_ms": 1.275108,
+          "global_input_tokens_per_second": 27649.012377277882
+        },
+        "optimized_grouped": {
+          "median_ms": 1.131902,
+          "process_medians_ms": [
+            1.131902,
+            1.134787,
+            1.1274425
+          ],
+          "range_min_ms": 1.1274425,
+          "range_max_ms": 1.134787,
+          "global_input_tokens_per_second": 30921.404856604193
+        },
+        "native_grouped": {
+          "median_ms": 0.7395625,
+          "process_medians_ms": [
+            0.7395625,
+            0.7444569999999999,
+            0.7379055
+          ],
+          "range_min_ms": 0.7379055,
+          "range_max_ms": 0.7444569999999999,
+          "global_input_tokens_per_second": 47325.27676835967
+        },
+        "native_packed": {
+          "median_ms": 0.5736600000000001,
+          "process_medians_ms": [
+            0.5783214999999999,
+            0.5736600000000001,
+            0.571064
+          ],
+          "range_min_ms": 0.571064,
+          "range_max_ms": 0.5783214999999999,
+          "global_input_tokens_per_second": 61011.749119687614
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.582935977526887,
+      "packed_vs_previous_native_latency_reduction_percent": 22.432519225893678,
+      "packed_vs_baseline_speedup": 2.206652023846878
+    },
+    {
+      "world_size": 2,
+      "hidden": 7168,
+      "tokens_rank_zero": 64,
+      "scenario": "balanced",
+      "total_input_tokens": 131,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.4112555,
+          "process_medians_ms": [
+            1.415324,
+            1.4112555,
+            1.397484
+          ],
+          "range_min_ms": 1.397484,
+          "range_max_ms": 1.415324,
+          "global_input_tokens_per_second": 92825.14753706894
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2710505,
+          "process_medians_ms": [
+            1.2710505,
+            1.262518,
+            1.272539
+          ],
+          "range_min_ms": 1.262518,
+          "range_max_ms": 1.272539,
+          "global_input_tokens_per_second": 103064.35503546082
+        },
+        "native_grouped": {
+          "median_ms": 0.8980345000000001,
+          "process_medians_ms": [
+            0.8999595,
+            0.8980345000000001,
+            0.8929214999999999
+          ],
+          "range_min_ms": 0.8929214999999999,
+          "range_max_ms": 0.8999595,
+          "global_input_tokens_per_second": 145874.1284438404
+        },
+        "native_packed": {
+          "median_ms": 0.710886,
+          "process_medians_ms": [
+            0.710886,
+            0.7092095,
+            0.713265
+          ],
+          "range_min_ms": 0.7092095,
+          "range_max_ms": 0.713265,
+          "global_input_tokens_per_second": 184277.0852147883
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.934770847660113,
+      "packed_vs_previous_native_latency_reduction_percent": 20.839789562650434,
+      "packed_vs_baseline_speedup": 1.985206488804112
+    },
+    {
+      "world_size": 2,
+      "hidden": 7168,
+      "tokens_rank_zero": 64,
+      "scenario": "skewed",
+      "total_input_tokens": 131,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.2849620000000002,
+          "process_medians_ms": [
+            1.2854315,
+            1.2849620000000002,
+            1.277628
+          ],
+          "range_min_ms": 1.277628,
+          "range_max_ms": 1.2854315,
+          "global_input_tokens_per_second": 101948.54011247023
+        },
+        "optimized_grouped": {
+          "median_ms": 1.1511689999999999,
+          "process_medians_ms": [
+            1.1584984999999999,
+            1.1511689999999999,
+            1.1394935
+          ],
+          "range_min_ms": 1.1394935,
+          "range_max_ms": 1.1584984999999999,
+          "global_input_tokens_per_second": 113797.36598188452
+        },
+        "native_grouped": {
+          "median_ms": 0.8054315,
+          "process_medians_ms": [
+            0.8054315,
+            0.806737,
+            0.799779
+          ],
+          "range_min_ms": 0.799779,
+          "range_max_ms": 0.806737,
+          "global_input_tokens_per_second": 162645.7370986856
+        },
+        "native_packed": {
+          "median_ms": 0.635615,
+          "process_medians_ms": [
+            0.6359435,
+            0.635615,
+            0.6288805
+          ],
+          "range_min_ms": 0.6288805,
+          "range_max_ms": 0.6359435,
+          "global_input_tokens_per_second": 206099.60432022528
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.41221452463188,
+      "packed_vs_previous_native_latency_reduction_percent": 21.083915888564075,
+      "packed_vs_baseline_speedup": 2.0216042730269113
+    },
+    {
+      "world_size": 2,
+      "hidden": 7168,
+      "tokens_rank_zero": 256,
+      "scenario": "balanced",
+      "total_input_tokens": 515,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.428631,
+          "process_medians_ms": [
+            1.434755,
+            1.428631,
+            1.4183314999999999
+          ],
+          "range_min_ms": 1.4183314999999999,
+          "range_max_ms": 1.434755,
+          "global_input_tokens_per_second": 360484.9677768437
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2844015,
+          "process_medians_ms": [
+            1.2844015,
+            1.288243,
+            1.2760515
+          ],
+          "range_min_ms": 1.2760515,
+          "range_max_ms": 1.288243,
+          "global_input_tokens_per_second": 400964.96305866976
+        },
+        "native_grouped": {
+          "median_ms": 1.0268519999999999,
+          "process_medians_ms": [
+            1.0334105,
+            1.0268519999999999,
+            1.0208825
+          ],
+          "range_min_ms": 1.0208825,
+          "range_max_ms": 1.0334105,
+          "global_input_tokens_per_second": 501532.84017560474
+        },
+        "native_packed": {
+          "median_ms": 0.828233,
+          "process_medians_ms": [
+            0.828233,
+            0.8291815,
+            0.8252085
+          ],
+          "range_min_ms": 0.8252085,
+          "range_max_ms": 0.8291815,
+          "global_input_tokens_per_second": 621805.6996038555
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.095644011644712,
+      "packed_vs_previous_native_latency_reduction_percent": 19.34251479278415,
+      "packed_vs_baseline_speedup": 1.7249143658849624
+    },
+    {
+      "world_size": 2,
+      "hidden": 7168,
+      "tokens_rank_zero": 256,
+      "scenario": "skewed",
+      "total_input_tokens": 515,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3097915,
+          "process_medians_ms": [
+            1.3097915,
+            1.312099,
+            1.3002669999999998
+          ],
+          "range_min_ms": 1.3002669999999998,
+          "range_max_ms": 1.312099,
+          "global_input_tokens_per_second": 393192.3516071069
+        },
+        "optimized_grouped": {
+          "median_ms": 1.159065,
+          "process_medians_ms": [
+            1.1639475,
+            1.159065,
+            1.143476
+          ],
+          "range_min_ms": 1.143476,
+          "range_max_ms": 1.1639475,
+          "global_input_tokens_per_second": 444323.65743077395
+        },
+        "native_grouped": {
+          "median_ms": 1.0383965000000002,
+          "process_medians_ms": [
+            1.0383965000000002,
+            1.044946,
+            1.0318085
+          ],
+          "range_min_ms": 1.0318085,
+          "range_max_ms": 1.044946,
+          "global_input_tokens_per_second": 495956.98752836697
+        },
+        "native_packed": {
+          "median_ms": 0.8658985,
+          "process_medians_ms": [
+            0.8658985,
+            0.872389,
+            0.854438
+          ],
+          "range_min_ms": 0.854438,
+          "range_max_ms": 0.872389,
+          "global_input_tokens_per_second": 594757.9306350572
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.507671259127882,
+      "packed_vs_previous_native_latency_reduction_percent": 16.611958919353075,
+      "packed_vs_baseline_speedup": 1.5126386060259949
+    },
+    {
+      "world_size": 2,
+      "hidden": 7168,
+      "tokens_rank_zero": 512,
+      "scenario": "balanced",
+      "total_input_tokens": 1027,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.48056,
+          "process_medians_ms": [
+            1.48056,
+            1.4807375,
+            1.4643395
+          ],
+          "range_min_ms": 1.4643395,
+          "range_max_ms": 1.4807375,
+          "global_input_tokens_per_second": 693656.4543145837
+        },
+        "optimized_grouped": {
+          "median_ms": 1.3177645,
+          "process_medians_ms": [
+            1.3203045,
+            1.3177645,
+            1.3047295
+          ],
+          "range_min_ms": 1.3047295,
+          "range_max_ms": 1.3203045,
+          "global_input_tokens_per_second": 779350.1797931269
+        },
+        "native_grouped": {
+          "median_ms": 1.199798,
+          "process_medians_ms": [
+            1.2029485,
+            1.199798,
+            1.1954164999999999
+          ],
+          "range_min_ms": 1.1954164999999999,
+          "range_max_ms": 1.2029485,
+          "global_input_tokens_per_second": 855977.4228661825
+        },
+        "native_packed": {
+          "median_ms": 1.0020915000000001,
+          "process_medians_ms": [
+            1.004016,
+            1.0020915000000001,
+            0.9970924999999999
+          ],
+          "range_min_ms": 0.9970924999999999,
+          "range_max_ms": 1.004016,
+          "global_input_tokens_per_second": 1024856.5126038889
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.995535473064255,
+      "packed_vs_previous_native_latency_reduction_percent": 16.478315516445253,
+      "packed_vs_baseline_speedup": 1.477469871763207
+    },
+    {
+      "world_size": 2,
+      "hidden": 7168,
+      "tokens_rank_zero": 512,
+      "scenario": "skewed",
+      "total_input_tokens": 1027,
+      "experts": 8,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3786335,
+          "process_medians_ms": [
+            1.38303,
+            1.3786335,
+            1.36273
+          ],
+          "range_min_ms": 1.36273,
+          "range_max_ms": 1.38303,
+          "global_input_tokens_per_second": 744940.5516404469
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2205565,
+          "process_medians_ms": [
+            1.2205565,
+            1.2228314999999998,
+            1.206809
+          ],
+          "range_min_ms": 1.206809,
+          "range_max_ms": 1.2228314999999998,
+          "global_input_tokens_per_second": 841419.4672675948
+        },
+        "native_grouped": {
+          "median_ms": 1.3386065,
+          "process_medians_ms": [
+            1.3384615,
+            1.3437915,
+            1.3386065
+          ],
+          "range_min_ms": 1.3384615,
+          "range_max_ms": 1.3437915,
+          "global_input_tokens_per_second": 767215.7575807378
+        },
+        "native_packed": {
+          "median_ms": 1.1630325,
+          "process_medians_ms": [
+            1.1585245,
+            1.1630595000000001,
+            1.1630325
+          ],
+          "range_min_ms": 1.1585245,
+          "range_max_ms": 1.1630595000000001,
+          "global_input_tokens_per_second": 883036.3725863207
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.466209112138937,
+      "packed_vs_previous_native_latency_reduction_percent": 13.116177158858866,
+      "packed_vs_baseline_speedup": 1.185378310580315
+    },
+    {
+      "world_size": 4,
+      "hidden": 2048,
+      "tokens_rank_zero": 16,
+      "scenario": "balanced",
+      "total_input_tokens": 82,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.4102945,
+          "process_medians_ms": [
+            1.3334505,
+            1.4102945,
+            1.4210385
+          ],
+          "range_min_ms": 1.3334505,
+          "range_max_ms": 1.4210385,
+          "global_input_tokens_per_second": 58143.88413200222
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2538895,
+          "process_medians_ms": [
+            1.1889115000000001,
+            1.2538895,
+            1.259656
+          ],
+          "range_min_ms": 1.1889115000000001,
+          "range_max_ms": 1.259656,
+          "global_input_tokens_per_second": 65396.51221259927
+        },
+        "native_grouped": {
+          "median_ms": 0.83412,
+          "process_medians_ms": [
+            0.7956909999999999,
+            0.83412,
+            0.8417049999999999
+          ],
+          "range_min_ms": 0.7956909999999999,
+          "range_max_ms": 0.8417049999999999,
+          "global_input_tokens_per_second": 98307.1980050832
+        },
+        "native_packed": {
+          "median_ms": 0.645864,
+          "process_medians_ms": [
+            0.6284005,
+            0.645864,
+            0.6610995
+          ],
+          "range_min_ms": 0.6284005,
+          "range_max_ms": 0.6610995,
+          "global_input_tokens_per_second": 126961.7133018716
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.090236826421707,
+      "packed_vs_previous_native_latency_reduction_percent": 22.569414472737737,
+      "packed_vs_baseline_speedup": 2.1835781217098336
+    },
+    {
+      "world_size": 4,
+      "hidden": 2048,
+      "tokens_rank_zero": 16,
+      "scenario": "skewed",
+      "total_input_tokens": 82,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.202086,
+          "process_medians_ms": [
+            1.202086,
+            1.215909,
+            1.1780275
+          ],
+          "range_min_ms": 1.1780275,
+          "range_max_ms": 1.215909,
+          "global_input_tokens_per_second": 68214.75335375339
+        },
+        "optimized_grouped": {
+          "median_ms": 1.071776,
+          "process_medians_ms": [
+            1.0748989999999998,
+            1.071776,
+            1.0270335
+          ],
+          "range_min_ms": 1.0270335,
+          "range_max_ms": 1.0748989999999998,
+          "global_input_tokens_per_second": 76508.5241692294
+        },
+        "native_grouped": {
+          "median_ms": 0.689772,
+          "process_medians_ms": [
+            0.689772,
+            0.690736,
+            0.671567
+          ],
+          "range_min_ms": 0.671567,
+          "range_max_ms": 0.690736,
+          "global_input_tokens_per_second": 118879.8617514193
+        },
+        "native_packed": {
+          "median_ms": 0.5368595,
+          "process_medians_ms": [
+            0.5372319999999999,
+            0.5368595,
+            0.523521
+          ],
+          "range_min_ms": 0.523521,
+          "range_max_ms": 0.5372319999999999,
+          "global_input_tokens_per_second": 152740.1489588989
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.84032257259463,
+      "packed_vs_previous_native_latency_reduction_percent": 22.1685571464194,
+      "packed_vs_baseline_speedup": 2.2391072524561824
+    },
+    {
+      "world_size": 4,
+      "hidden": 2048,
+      "tokens_rank_zero": 64,
+      "scenario": "balanced",
+      "total_input_tokens": 274,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.388178,
+          "process_medians_ms": [
+            1.3227639999999998,
+            1.388178,
+            1.399449
+          ],
+          "range_min_ms": 1.3227639999999998,
+          "range_max_ms": 1.399449,
+          "global_input_tokens_per_second": 197381.02750511823
+        },
+        "optimized_grouped": {
+          "median_ms": 1.248503,
+          "process_medians_ms": [
+            1.1913635,
+            1.248503,
+            1.2492615
+          ],
+          "range_min_ms": 1.1913635,
+          "range_max_ms": 1.2492615,
+          "global_input_tokens_per_second": 219462.82868363152
+        },
+        "native_grouped": {
+          "median_ms": 0.8450955,
+          "process_medians_ms": [
+            0.802368,
+            0.8450955,
+            0.858716
+          ],
+          "range_min_ms": 0.802368,
+          "range_max_ms": 0.858716,
+          "global_input_tokens_per_second": 324223.7119946799
+        },
+        "native_packed": {
+          "median_ms": 0.6689205,
+          "process_medians_ms": [
+            0.6329105,
+            0.6689205,
+            0.671915
+          ],
+          "range_min_ms": 0.6329105,
+          "range_max_ms": 0.671915,
+          "global_input_tokens_per_second": 409615.1934347953
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.061750006123138,
+      "packed_vs_previous_native_latency_reduction_percent": 20.846756372504636,
+      "packed_vs_baseline_speedup": 2.075251094861048
+    },
+    {
+      "world_size": 4,
+      "hidden": 2048,
+      "tokens_rank_zero": 64,
+      "scenario": "skewed",
+      "total_input_tokens": 274,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.2048015,
+          "process_medians_ms": [
+            1.2048015,
+            1.225035,
+            1.1693465
+          ],
+          "range_min_ms": 1.1693465,
+          "range_max_ms": 1.225035,
+          "global_input_tokens_per_second": 227423.35563161233
+        },
+        "optimized_grouped": {
+          "median_ms": 1.076076,
+          "process_medians_ms": [
+            1.076076,
+            1.0832915,
+            1.0372305000000002
+          ],
+          "range_min_ms": 1.0372305000000002,
+          "range_max_ms": 1.0832915,
+          "global_input_tokens_per_second": 254628.8552109702
+        },
+        "native_grouped": {
+          "median_ms": 0.682988,
+          "process_medians_ms": [
+            0.6821415,
+            0.7095724999999999,
+            0.682988
+          ],
+          "range_min_ms": 0.6821415,
+          "range_max_ms": 0.7095724999999999,
+          "global_input_tokens_per_second": 401178.35159622127
+        },
+        "native_packed": {
+          "median_ms": 0.539546,
+          "process_medians_ms": [
+            0.539546,
+            0.5469435,
+            0.5300255
+          ],
+          "range_min_ms": 0.5300255,
+          "range_max_ms": 0.5469435,
+          "global_input_tokens_per_second": 507834.3644471463
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.684374147940556,
+      "packed_vs_previous_native_latency_reduction_percent": 21.00212595243256,
+      "packed_vs_baseline_speedup": 2.2329912556111995
+    },
+    {
+      "world_size": 4,
+      "hidden": 2048,
+      "tokens_rank_zero": 256,
+      "scenario": "balanced",
+      "total_input_tokens": 1042,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3728,
+          "process_medians_ms": [
+            1.335959,
+            1.385716,
+            1.3728
+          ],
+          "range_min_ms": 1.335959,
+          "range_max_ms": 1.385716,
+          "global_input_tokens_per_second": 759032.634032634
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2405089999999999,
+          "process_medians_ms": [
+            1.193858,
+            1.2538909999999999,
+            1.2405089999999999
+          ],
+          "range_min_ms": 1.193858,
+          "range_max_ms": 1.2538909999999999,
+          "global_input_tokens_per_second": 839977.7833131402
+        },
+        "native_grouped": {
+          "median_ms": 0.8616105000000001,
+          "process_medians_ms": [
+            0.8362769999999999,
+            0.8822920000000001,
+            0.8616105000000001
+          ],
+          "range_min_ms": 0.8362769999999999,
+          "range_max_ms": 0.8822920000000001,
+          "global_input_tokens_per_second": 1209363.1635176218
+        },
+        "native_packed": {
+          "median_ms": 0.6876605,
+          "process_medians_ms": [
+            0.6572545000000001,
+            0.6910805,
+            0.6876605
+          ],
+          "range_min_ms": 0.6572545000000001,
+          "range_max_ms": 0.6910805,
+          "global_input_tokens_per_second": 1515282.614022472
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.636582167832175,
+      "packed_vs_previous_native_latency_reduction_percent": 20.188936880411745,
+      "packed_vs_baseline_speedup": 1.9963339467658823
+    },
+    {
+      "world_size": 4,
+      "hidden": 2048,
+      "tokens_rank_zero": 256,
+      "scenario": "skewed",
+      "total_input_tokens": 1042,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.214034,
+          "process_medians_ms": [
+            1.214034,
+            1.2203275,
+            1.1839365
+          ],
+          "range_min_ms": 1.1839365,
+          "range_max_ms": 1.2203275,
+          "global_input_tokens_per_second": 858295.566680999
+        },
+        "optimized_grouped": {
+          "median_ms": 1.0743065,
+          "process_medians_ms": [
+            1.081139,
+            1.0743065,
+            1.0455515
+          ],
+          "range_min_ms": 1.0455515,
+          "range_max_ms": 1.081139,
+          "global_input_tokens_per_second": 969928.041950784
+        },
+        "native_grouped": {
+          "median_ms": 0.759421,
+          "process_medians_ms": [
+            0.759421,
+            0.7652924999999999,
+            0.7485759999999999
+          ],
+          "range_min_ms": 0.7485759999999999,
+          "range_max_ms": 0.7652924999999999,
+          "global_input_tokens_per_second": 1372097.9535725242
+        },
+        "native_packed": {
+          "median_ms": 0.6071295,
+          "process_medians_ms": [
+            0.6097455,
+            0.6071295,
+            0.593961
+          ],
+          "range_min_ms": 0.593961,
+          "range_max_ms": 0.6097455,
+          "global_input_tokens_per_second": 1716273.0521247939
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.509356410117011,
+      "packed_vs_previous_native_latency_reduction_percent": 20.05363296511421,
+      "packed_vs_baseline_speedup": 1.9996294036115854
+    },
+    {
+      "world_size": 4,
+      "hidden": 2048,
+      "tokens_rank_zero": 512,
+      "scenario": "balanced",
+      "total_input_tokens": 2066,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3568790000000002,
+          "process_medians_ms": [
+            1.3356585,
+            1.3568790000000002,
+            1.3981325
+          ],
+          "range_min_ms": 1.3356585,
+          "range_max_ms": 1.3981325,
+          "global_input_tokens_per_second": 1522611.8172659462
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2271830000000001,
+          "process_medians_ms": [
+            1.1951505,
+            1.2271830000000001,
+            1.25114
+          ],
+          "range_min_ms": 1.1951505,
+          "range_max_ms": 1.25114,
+          "global_input_tokens_per_second": 1683530.492192281
+        },
+        "native_grouped": {
+          "median_ms": 0.8994599999999999,
+          "process_medians_ms": [
+            0.8805594999999999,
+            0.8994599999999999,
+            0.917537
+          ],
+          "range_min_ms": 0.8805594999999999,
+          "range_max_ms": 0.917537,
+          "global_input_tokens_per_second": 2296933.7157850266
+        },
+        "native_packed": {
+          "median_ms": 0.72294,
+          "process_medians_ms": [
+            0.706098,
+            0.72294,
+            0.736219
+          ],
+          "range_min_ms": 0.706098,
+          "range_max_ms": 0.736219,
+          "global_input_tokens_per_second": 2857775.1957285525
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.55840572372334,
+      "packed_vs_previous_native_latency_reduction_percent": 19.625108398372348,
+      "packed_vs_baseline_speedup": 1.8768901983567103
+    },
+    {
+      "world_size": 4,
+      "hidden": 2048,
+      "tokens_rank_zero": 512,
+      "scenario": "skewed",
+      "total_input_tokens": 2066,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.2646074999999999,
+          "process_medians_ms": [
+            1.264488,
+            1.2832935,
+            1.2646074999999999
+          ],
+          "range_min_ms": 1.264488,
+          "range_max_ms": 1.2832935,
+          "global_input_tokens_per_second": 1633708.4826715009
+        },
+        "optimized_grouped": {
+          "median_ms": 1.1072405,
+          "process_medians_ms": [
+            1.1072405,
+            1.12829,
+            1.097291
+          ],
+          "range_min_ms": 1.097291,
+          "range_max_ms": 1.12829,
+          "global_input_tokens_per_second": 1865899.9557909956
+        },
+        "native_grouped": {
+          "median_ms": 0.85746,
+          "process_medians_ms": [
+            0.8466235,
+            0.860358,
+            0.85746
+          ],
+          "range_min_ms": 0.8466235,
+          "range_max_ms": 0.860358,
+          "global_input_tokens_per_second": 2409441.839852588
+        },
+        "native_packed": {
+          "median_ms": 0.708466,
+          "process_medians_ms": [
+            0.6938475,
+            0.710931,
+            0.708466
+          ],
+          "range_min_ms": 0.6938475,
+          "range_max_ms": 0.710931,
+          "global_input_tokens_per_second": 2916159.702794488
+        }
+      },
+      "three_collective_latency_reduction_percent": 12.443940115806672,
+      "packed_vs_previous_native_latency_reduction_percent": 17.376204137802343,
+      "packed_vs_baseline_speedup": 1.7849939164335336
+    },
+    {
+      "world_size": 4,
+      "hidden": 7168,
+      "tokens_rank_zero": 16,
+      "scenario": "balanced",
+      "total_input_tokens": 82,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.444988,
+          "process_medians_ms": [
+            1.444988,
+            1.434122,
+            1.449806
+          ],
+          "range_min_ms": 1.434122,
+          "range_max_ms": 1.449806,
+          "global_input_tokens_per_second": 56747.87610692961
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2864520000000002,
+          "process_medians_ms": [
+            1.2852165,
+            1.2864520000000002,
+            1.3040474999999998
+          ],
+          "range_min_ms": 1.2852165,
+          "range_max_ms": 1.3040474999999998,
+          "global_input_tokens_per_second": 63741.20449111198
+        },
+        "native_grouped": {
+          "median_ms": 0.880826,
+          "process_medians_ms": [
+            0.880826,
+            0.880636,
+            0.8848830000000001
+          ],
+          "range_min_ms": 0.880636,
+          "range_max_ms": 0.8848830000000001,
+          "global_input_tokens_per_second": 93094.43635859976
+        },
+        "native_packed": {
+          "median_ms": 0.690661,
+          "process_medians_ms": [
+            0.6893685,
+            0.690661,
+            0.7010235
+          ],
+          "range_min_ms": 0.6893685,
+          "range_max_ms": 0.7010235,
+          "global_input_tokens_per_second": 118726.84283606574
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.97144059327827,
+      "packed_vs_previous_native_latency_reduction_percent": 21.58939450016235,
+      "packed_vs_baseline_speedup": 2.0921812582439143
+    },
+    {
+      "world_size": 4,
+      "hidden": 7168,
+      "tokens_rank_zero": 16,
+      "scenario": "skewed",
+      "total_input_tokens": 82,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.2525735,
+          "process_medians_ms": [
+            1.2525735,
+            1.2789380000000001,
+            1.1871635
+          ],
+          "range_min_ms": 1.1871635,
+          "range_max_ms": 1.2789380000000001,
+          "global_input_tokens_per_second": 65465.22020464268
+        },
+        "optimized_grouped": {
+          "median_ms": 1.113869,
+          "process_medians_ms": [
+            1.113869,
+            1.1334710000000001,
+            1.051863
+          ],
+          "range_min_ms": 1.051863,
+          "range_max_ms": 1.1334710000000001,
+          "global_input_tokens_per_second": 73617.27456280765
+        },
+        "native_grouped": {
+          "median_ms": 0.7236605,
+          "process_medians_ms": [
+            0.7236605,
+            0.7490635,
+            0.698592
+          ],
+          "range_min_ms": 0.698592,
+          "range_max_ms": 0.7490635,
+          "global_input_tokens_per_second": 113312.80344857843
+        },
+        "native_packed": {
+          "median_ms": 0.567175,
+          "process_medians_ms": [
+            0.567175,
+            0.5825405,
+            0.5452475
+          ],
+          "range_min_ms": 0.5452475,
+          "range_max_ms": 0.5825405,
+          "global_input_tokens_per_second": 144576.18900692026
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.073561751066908,
+      "packed_vs_previous_native_latency_reduction_percent": 21.624159395186005,
+      "packed_vs_baseline_speedup": 2.2084427205007273
+    },
+    {
+      "world_size": 4,
+      "hidden": 7168,
+      "tokens_rank_zero": 64,
+      "scenario": "balanced",
+      "total_input_tokens": 274,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.4315039999999999,
+          "process_medians_ms": [
+            1.3889875,
+            1.4315039999999999,
+            1.4333770000000001
+          ],
+          "range_min_ms": 1.3889875,
+          "range_max_ms": 1.4333770000000001,
+          "global_input_tokens_per_second": 191407.0795471057
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2940800000000001,
+          "process_medians_ms": [
+            1.2497669999999999,
+            1.2940800000000001,
+            1.29563
+          ],
+          "range_min_ms": 1.2497669999999999,
+          "range_max_ms": 1.29563,
+          "global_input_tokens_per_second": 211733.43224530166
+        },
+        "native_grouped": {
+          "median_ms": 0.888892,
+          "process_medians_ms": [
+            0.8686015,
+            0.888892,
+            0.895818
+          ],
+          "range_min_ms": 0.8686015,
+          "range_max_ms": 0.895818,
+          "global_input_tokens_per_second": 308248.92112877604
+        },
+        "native_packed": {
+          "median_ms": 0.7003165,
+          "process_medians_ms": [
+            0.6837310000000001,
+            0.7003165,
+            0.706855
+          ],
+          "range_min_ms": 0.6837310000000001,
+          "range_max_ms": 0.706855,
+          "global_input_tokens_per_second": 391251.66978073487
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.599973175066213,
+      "packed_vs_previous_native_latency_reduction_percent": 21.214669498656757,
+      "packed_vs_baseline_speedup": 2.04408149743723
+    },
+    {
+      "world_size": 4,
+      "hidden": 7168,
+      "tokens_rank_zero": 64,
+      "scenario": "skewed",
+      "total_input_tokens": 274,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.264354,
+          "process_medians_ms": [
+            1.264354,
+            1.2718055,
+            1.1989740000000002
+          ],
+          "range_min_ms": 1.1989740000000002,
+          "range_max_ms": 1.2718055,
+          "global_input_tokens_per_second": 216711.45897430624
+        },
+        "optimized_grouped": {
+          "median_ms": 1.133778,
+          "process_medians_ms": [
+            1.133778,
+            1.138843,
+            1.0667595
+          ],
+          "range_min_ms": 1.0667595,
+          "range_max_ms": 1.138843,
+          "global_input_tokens_per_second": 241669.8859917903
+        },
+        "native_grouped": {
+          "median_ms": 0.7730395000000001,
+          "process_medians_ms": [
+            0.7730395000000001,
+            0.7930980000000001,
+            0.748634
+          ],
+          "range_min_ms": 0.748634,
+          "range_max_ms": 0.7930980000000001,
+          "global_input_tokens_per_second": 354445.01865687326
+        },
+        "native_packed": {
+          "median_ms": 0.6095395,
+          "process_medians_ms": [
+            0.6095395,
+            0.625033,
+            0.5992599999999999
+          ],
+          "range_min_ms": 0.5992599999999999,
+          "range_max_ms": 0.625033,
+          "global_input_tokens_per_second": 449519.6783801542
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.327487396725921,
+      "packed_vs_previous_native_latency_reduction_percent": 21.150277573138254,
+      "packed_vs_baseline_speedup": 2.0742773848126332
+    },
+    {
+      "world_size": 4,
+      "hidden": 7168,
+      "tokens_rank_zero": 256,
+      "scenario": "balanced",
+      "total_input_tokens": 1042,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.460126,
+          "process_medians_ms": [
+            1.4127589999999999,
+            1.4615665,
+            1.460126
+          ],
+          "range_min_ms": 1.4127589999999999,
+          "range_max_ms": 1.4615665,
+          "global_input_tokens_per_second": 713637.0422826523
+        },
+        "optimized_grouped": {
+          "median_ms": 1.316346,
+          "process_medians_ms": [
+            1.266769,
+            1.3267775,
+            1.316346
+          ],
+          "range_min_ms": 1.266769,
+          "range_max_ms": 1.3267775,
+          "global_input_tokens_per_second": 791585.1911275607
+        },
+        "native_grouped": {
+          "median_ms": 0.9702014999999999,
+          "process_medians_ms": [
+            0.9337435000000001,
+            0.9702014999999999,
+            0.9705655
+          ],
+          "range_min_ms": 0.9337435000000001,
+          "range_max_ms": 0.9705655,
+          "global_input_tokens_per_second": 1074003.6992315515
+        },
+        "native_packed": {
+          "median_ms": 0.772572,
+          "process_medians_ms": [
+            0.7450575,
+            0.774509,
+            0.772572
+          ],
+          "range_min_ms": 0.7450575,
+          "range_max_ms": 0.774509,
+          "global_input_tokens_per_second": 1348741.6059603505
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.847095387658323,
+      "packed_vs_previous_native_latency_reduction_percent": 20.369943769412835,
+      "packed_vs_baseline_speedup": 1.889954593228851
+    },
+    {
+      "world_size": 4,
+      "hidden": 7168,
+      "tokens_rank_zero": 256,
+      "scenario": "skewed",
+      "total_input_tokens": 1042,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.323581,
+          "process_medians_ms": [
+            1.323581,
+            1.339424,
+            1.2645835
+          ],
+          "range_min_ms": 1.2645835,
+          "range_max_ms": 1.339424,
+          "global_input_tokens_per_second": 787258.2033135864
+        },
+        "optimized_grouped": {
+          "median_ms": 1.1612725,
+          "process_medians_ms": [
+            1.1612725,
+            1.173312,
+            1.1070095
+          ],
+          "range_min_ms": 1.1070095,
+          "range_max_ms": 1.173312,
+          "global_input_tokens_per_second": 897291.548710574
+        },
+        "native_grouped": {
+          "median_ms": 0.972224,
+          "process_medians_ms": [
+            0.972224,
+            0.9881455,
+            0.9436534999999999
+          ],
+          "range_min_ms": 0.9436534999999999,
+          "range_max_ms": 0.9881455,
+          "global_input_tokens_per_second": 1071769.4687644
+        },
+        "native_packed": {
+          "median_ms": 0.8059635,
+          "process_medians_ms": [
+            0.8059635,
+            0.817725,
+            0.7948105
+          ],
+          "range_min_ms": 0.7948105,
+          "range_max_ms": 0.817725,
+          "global_input_tokens_per_second": 1292862.517967625
+        }
+      },
+      "three_collective_latency_reduction_percent": 12.262830910990708,
+      "packed_vs_previous_native_latency_reduction_percent": 17.101048729510882,
+      "packed_vs_baseline_speedup": 1.6422344188043252
+    },
+    {
+      "world_size": 4,
+      "hidden": 7168,
+      "tokens_rank_zero": 512,
+      "scenario": "balanced",
+      "total_input_tokens": 2066,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.4868785,
+          "process_medians_ms": [
+            1.4693015,
+            1.5000360000000001,
+            1.4868785
+          ],
+          "range_min_ms": 1.4693015,
+          "range_max_ms": 1.5000360000000001,
+          "global_input_tokens_per_second": 1389488.1121759445
+        },
+        "optimized_grouped": {
+          "median_ms": 1.3180555,
+          "process_medians_ms": [
+            1.3093534999999998,
+            1.3346814999999999,
+            1.3180555
+          ],
+          "range_min_ms": 1.3093534999999998,
+          "range_max_ms": 1.3346814999999999,
+          "global_input_tokens_per_second": 1567460.5507886428
+        },
+        "native_grouped": {
+          "median_ms": 1.0411005000000002,
+          "process_medians_ms": [
+            1.018946,
+            1.0506544999999998,
+            1.0411005000000002
+          ],
+          "range_min_ms": 1.018946,
+          "range_max_ms": 1.0506544999999998,
+          "global_input_tokens_per_second": 1984438.5820581198
+        },
+        "native_packed": {
+          "median_ms": 0.8474945,
+          "process_medians_ms": [
+            0.834903,
+            0.8647914999999999,
+            0.8474945
+          ],
+          "range_min_ms": 0.834903,
+          "range_max_ms": 0.8647914999999999,
+          "global_input_tokens_per_second": 2437773.9324561986
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.35418933019745,
+      "packed_vs_previous_native_latency_reduction_percent": 18.596283451981833,
+      "packed_vs_baseline_speedup": 1.7544402943027948
+    },
+    {
+      "world_size": 4,
+      "hidden": 7168,
+      "tokens_rank_zero": 512,
+      "scenario": "skewed",
+      "total_input_tokens": 2066,
+      "experts": 16,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.7757525,
+          "process_medians_ms": [
+            1.779191,
+            1.7757525,
+            1.737029
+          ],
+          "range_min_ms": 1.737029,
+          "range_max_ms": 1.779191,
+          "global_input_tokens_per_second": 1163450.4245383295
+        },
+        "optimized_grouped": {
+          "median_ms": 1.594675,
+          "process_medians_ms": [
+            1.594675,
+            1.5958695,
+            1.5756115
+          ],
+          "range_min_ms": 1.5756115,
+          "range_max_ms": 1.5958695,
+          "global_input_tokens_per_second": 1295561.7915876275
+        },
+        "native_grouped": {
+          "median_ms": 1.3474344999999999,
+          "process_medians_ms": [
+            1.3474344999999999,
+            1.361464,
+            1.3228605
+          ],
+          "range_min_ms": 1.3228605,
+          "range_max_ms": 1.361464,
+          "global_input_tokens_per_second": 1533284.1781919643
+        },
+        "native_packed": {
+          "median_ms": 1.1154804999999999,
+          "process_medians_ms": [
+            1.1154804999999999,
+            1.1234775,
+            1.1042415
+          ],
+          "range_min_ms": 1.1042415,
+          "range_max_ms": 1.1234775,
+          "global_input_tokens_per_second": 1852116.643903681
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.19722624633782,
+      "packed_vs_previous_native_latency_reduction_percent": 17.21449168772211,
+      "packed_vs_baseline_speedup": 1.5919171155389988
+    },
+    {
+      "world_size": 8,
+      "hidden": 2048,
+      "tokens_rank_zero": 16,
+      "scenario": "balanced",
+      "total_input_tokens": 212,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.410977,
+          "process_medians_ms": [
+            1.410977,
+            1.409972,
+            1.4811935
+          ],
+          "range_min_ms": 1.409972,
+          "range_max_ms": 1.4811935,
+          "global_input_tokens_per_second": 150250.50018533258
+        },
+        "optimized_grouped": {
+          "median_ms": 1.2600864999999999,
+          "process_medians_ms": [
+            1.2567325,
+            1.2600864999999999,
+            1.318896
+          ],
+          "range_min_ms": 1.2567325,
+          "range_max_ms": 1.318896,
+          "global_input_tokens_per_second": 168242.41827842774
+        },
+        "native_grouped": {
+          "median_ms": 0.8450005,
+          "process_medians_ms": [
+            0.842374,
+            0.8450005,
+            0.8728295
+          ],
+          "range_min_ms": 0.842374,
+          "range_max_ms": 0.8728295,
+          "global_input_tokens_per_second": 250887.4255103991
+        },
+        "native_packed": {
+          "median_ms": 0.6566339999999999,
+          "process_medians_ms": [
+            0.651294,
+            0.6566339999999999,
+            0.680488
+          ],
+          "range_min_ms": 0.651294,
+          "range_max_ms": 0.680488,
+          "global_input_tokens_per_second": 322858.7005851053
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.694043914252326,
+      "packed_vs_previous_native_latency_reduction_percent": 22.29188030066256,
+      "packed_vs_baseline_speedup": 2.148802833846557
+    },
+    {
+      "world_size": 8,
+      "hidden": 2048,
+      "tokens_rank_zero": 16,
+      "scenario": "skewed",
+      "total_input_tokens": 212,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.250809,
+          "process_medians_ms": [
+            1.250809,
+            1.2194165,
+            1.2511985
+          ],
+          "range_min_ms": 1.2194165,
+          "range_max_ms": 1.2511985,
+          "global_input_tokens_per_second": 169490.3058740383
+        },
+        "optimized_grouped": {
+          "median_ms": 1.0899334999999999,
+          "process_medians_ms": [
+            1.10445,
+            1.0714005,
+            1.0899334999999999
+          ],
+          "range_min_ms": 1.0714005,
+          "range_max_ms": 1.10445,
+          "global_input_tokens_per_second": 194507.2795725611
+        },
+        "native_grouped": {
+          "median_ms": 0.709807,
+          "process_medians_ms": [
+            0.709807,
+            0.676441,
+            0.7140455
+          ],
+          "range_min_ms": 0.676441,
+          "range_max_ms": 0.7140455,
+          "global_input_tokens_per_second": 298672.73780055705
+        },
+        "native_packed": {
+          "median_ms": 0.5417015000000001,
+          "process_medians_ms": [
+            0.5417015000000001,
+            0.53052,
+            0.5561615
+          ],
+          "range_min_ms": 0.53052,
+          "range_max_ms": 0.5561615,
+          "global_input_tokens_per_second": 391359.4479616541
+        }
+      },
+      "three_collective_latency_reduction_percent": 12.861715897471171,
+      "packed_vs_previous_native_latency_reduction_percent": 23.683268832231853,
+      "packed_vs_baseline_speedup": 2.3090373572899465
+    },
+    {
+      "world_size": 8,
+      "hidden": 2048,
+      "tokens_rank_zero": 64,
+      "scenario": "balanced",
+      "total_input_tokens": 596,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.406921,
+          "process_medians_ms": [
+            1.40413,
+            1.406921,
+            1.4275295
+          ],
+          "range_min_ms": 1.40413,
+          "range_max_ms": 1.4275295,
+          "global_input_tokens_per_second": 423620.0895430518
+        },
+        "optimized_grouped": {
+          "median_ms": 1.266696,
+          "process_medians_ms": [
+            1.252803,
+            1.266696,
+            1.2730005
+          ],
+          "range_min_ms": 1.252803,
+          "range_max_ms": 1.2730005,
+          "global_input_tokens_per_second": 470515.4196429135
+        },
+        "native_grouped": {
+          "median_ms": 0.848663,
+          "process_medians_ms": [
+            0.8404255,
+            0.848663,
+            0.8609884999999999
+          ],
+          "range_min_ms": 0.8404255,
+          "range_max_ms": 0.8609884999999999,
+          "global_input_tokens_per_second": 702281.1174753702
+        },
+        "native_packed": {
+          "median_ms": 0.6548080000000001,
+          "process_medians_ms": [
+            0.6548080000000001,
+            0.65463,
+            0.6624085
+          ],
+          "range_min_ms": 0.65463,
+          "range_max_ms": 0.6624085,
+          "global_input_tokens_per_second": 910190.468045595
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.966799841640006,
+      "packed_vs_previous_native_latency_reduction_percent": 22.84240034029996,
+      "packed_vs_baseline_speedup": 2.148600811230162
+    },
+    {
+      "world_size": 8,
+      "hidden": 2048,
+      "tokens_rank_zero": 64,
+      "scenario": "skewed",
+      "total_input_tokens": 596,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.230919,
+          "process_medians_ms": [
+            1.23779,
+            1.230919,
+            1.213129
+          ],
+          "range_min_ms": 1.213129,
+          "range_max_ms": 1.23779,
+          "global_input_tokens_per_second": 484191.07999795274
+        },
+        "optimized_grouped": {
+          "median_ms": 1.089169,
+          "process_medians_ms": [
+            1.104764,
+            1.089169,
+            1.064869
+          ],
+          "range_min_ms": 1.064869,
+          "range_max_ms": 1.104764,
+          "global_input_tokens_per_second": 547206.1727794309
+        },
+        "native_grouped": {
+          "median_ms": 0.7066574999999999,
+          "process_medians_ms": [
+            0.708712,
+            0.6995709999999999,
+            0.7066574999999999
+          ],
+          "range_min_ms": 0.6995709999999999,
+          "range_max_ms": 0.708712,
+          "global_input_tokens_per_second": 843407.1668382492
+        },
+        "native_packed": {
+          "median_ms": 0.5491905,
+          "process_medians_ms": [
+            0.553456,
+            0.5491905,
+            0.5468394999999999
+          ],
+          "range_min_ms": 0.5468394999999999,
+          "range_max_ms": 0.553456,
+          "global_input_tokens_per_second": 1085233.630224849
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.515786172770104,
+      "packed_vs_previous_native_latency_reduction_percent": 22.283355090691025,
+      "packed_vs_baseline_speedup": 2.2413333806757403
+    },
+    {
+      "world_size": 8,
+      "hidden": 2048,
+      "tokens_rank_zero": 256,
+      "scenario": "balanced",
+      "total_input_tokens": 2132,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.417483,
+          "process_medians_ms": [
+            1.4226585,
+            1.417483,
+            1.417239
+          ],
+          "range_min_ms": 1.417239,
+          "range_max_ms": 1.4226585,
+          "global_input_tokens_per_second": 1504074.475672724
+        },
+        "optimized_grouped": {
+          "median_ms": 1.276935,
+          "process_medians_ms": [
+            1.278727,
+            1.2655515,
+            1.276935
+          ],
+          "range_min_ms": 1.2655515,
+          "range_max_ms": 1.278727,
+          "global_input_tokens_per_second": 1669622.964363887
+        },
+        "native_grouped": {
+          "median_ms": 0.8735495,
+          "process_medians_ms": [
+            0.8713325000000001,
+            0.8735495,
+            0.879018
+          ],
+          "range_min_ms": 0.8713325000000001,
+          "range_max_ms": 0.879018,
+          "global_input_tokens_per_second": 2440617.2746936493
+        },
+        "native_packed": {
+          "median_ms": 0.67946,
+          "process_medians_ms": [
+            0.67946,
+            0.674732,
+            0.687756
+          ],
+          "range_min_ms": 0.674732,
+          "range_max_ms": 0.687756,
+          "global_input_tokens_per_second": 3137785.8887940426
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.915321735780969,
+      "packed_vs_previous_native_latency_reduction_percent": 22.218489049561597,
+      "packed_vs_baseline_speedup": 2.086190504223943
+    },
+    {
+      "world_size": 8,
+      "hidden": 2048,
+      "tokens_rank_zero": 256,
+      "scenario": "skewed",
+      "total_input_tokens": 2132,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3162099999999999,
+          "process_medians_ms": [
+            1.351024,
+            1.3162099999999999,
+            1.283574
+          ],
+          "range_min_ms": 1.283574,
+          "range_max_ms": 1.351024,
+          "global_input_tokens_per_second": 1619802.3111813467
+        },
+        "optimized_grouped": {
+          "median_ms": 1.141921,
+          "process_medians_ms": [
+            1.177261,
+            1.141921,
+            1.1168875
+          ],
+          "range_min_ms": 1.1168875,
+          "range_max_ms": 1.177261,
+          "global_input_tokens_per_second": 1867029.3304002641
+        },
+        "native_grouped": {
+          "median_ms": 0.7727554999999999,
+          "process_medians_ms": [
+            0.7989445,
+            0.771577,
+            0.7727554999999999
+          ],
+          "range_min_ms": 0.771577,
+          "range_max_ms": 0.7989445,
+          "global_input_tokens_per_second": 2758958.040415112
+        },
+        "native_packed": {
+          "median_ms": 0.628745,
+          "process_medians_ms": [
+            0.6345715,
+            0.628745,
+            0.6239325
+          ],
+          "range_min_ms": 0.6239325,
+          "range_max_ms": 0.6345715,
+          "global_input_tokens_per_second": 3390881.8360384577
+        }
+      },
+      "three_collective_latency_reduction_percent": 13.24173194247118,
+      "packed_vs_previous_native_latency_reduction_percent": 18.635972180075065,
+      "packed_vs_baseline_speedup": 2.0933923927824476
+    },
+    {
+      "world_size": 8,
+      "hidden": 2048,
+      "tokens_rank_zero": 512,
+      "scenario": "balanced",
+      "total_input_tokens": 4180,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.43231,
+          "process_medians_ms": [
+            1.4287135,
+            1.43231,
+            1.4443
+          ],
+          "range_min_ms": 1.4287135,
+          "range_max_ms": 1.4443,
+          "global_input_tokens_per_second": 2918362.6449581445
+        },
+        "optimized_grouped": {
+          "median_ms": 1.284401,
+          "process_medians_ms": [
+            1.284401,
+            1.2789584999999999,
+            1.2939335
+          ],
+          "range_min_ms": 1.2789584999999999,
+          "range_max_ms": 1.2939335,
+          "global_input_tokens_per_second": 3254435.336004877
+        },
+        "native_grouped": {
+          "median_ms": 0.8995805,
+          "process_medians_ms": [
+            0.8995805,
+            0.8990849999999999,
+            0.9117919999999999
+          ],
+          "range_min_ms": 0.8990849999999999,
+          "range_max_ms": 0.9117919999999999,
+          "global_input_tokens_per_second": 4646610.28112548
+        },
+        "native_packed": {
+          "median_ms": 0.7114035,
+          "process_medians_ms": [
+            0.705503,
+            0.7114035,
+            0.7190915
+          ],
+          "range_min_ms": 0.705503,
+          "range_max_ms": 0.7190915,
+          "global_input_tokens_per_second": 5875709.073683219
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.326605273997957,
+      "packed_vs_previous_native_latency_reduction_percent": 20.91830581031937,
+      "packed_vs_baseline_speedup": 2.0133581012744526
+    },
+    {
+      "world_size": 8,
+      "hidden": 2048,
+      "tokens_rank_zero": 512,
+      "scenario": "skewed",
+      "total_input_tokens": 4180,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3920249999999998,
+          "process_medians_ms": [
+            1.413529,
+            1.3920249999999998,
+            1.3825645
+          ],
+          "range_min_ms": 1.3825645,
+          "range_max_ms": 1.413529,
+          "global_input_tokens_per_second": 3002819.633268081
+        },
+        "optimized_grouped": {
+          "median_ms": 1.209622,
+          "process_medians_ms": [
+            1.232861,
+            1.209622,
+            1.2095125000000002
+          ],
+          "range_min_ms": 1.2095125000000002,
+          "range_max_ms": 1.232861,
+          "global_input_tokens_per_second": 3455624.980365767
+        },
+        "native_grouped": {
+          "median_ms": 0.9109355,
+          "process_medians_ms": [
+            0.9289259999999999,
+            0.9109355,
+            0.9052184999999999
+          ],
+          "range_min_ms": 0.9052184999999999,
+          "range_max_ms": 0.9289259999999999,
+          "global_input_tokens_per_second": 4588689.319935385
+        },
+        "native_packed": {
+          "median_ms": 0.749689,
+          "process_medians_ms": [
+            0.7571575,
+            0.7496590000000001,
+            0.749689
+          ],
+          "range_min_ms": 0.7496590000000001,
+          "range_max_ms": 0.7571575,
+          "global_input_tokens_per_second": 5575645.367612436
+        }
+      },
+      "three_collective_latency_reduction_percent": 13.103428458540611,
+      "packed_vs_previous_native_latency_reduction_percent": 17.701198383420113,
+      "packed_vs_baseline_speedup": 1.8568032877633256
+    },
+    {
+      "world_size": 8,
+      "hidden": 7168,
+      "tokens_rank_zero": 16,
+      "scenario": "balanced",
+      "total_input_tokens": 212,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.505858,
+          "process_medians_ms": [
+            1.505858,
+            1.4481424999999999,
+            1.532638
+          ],
+          "range_min_ms": 1.4481424999999999,
+          "range_max_ms": 1.532638,
+          "global_input_tokens_per_second": 140783.5267335964
+        },
+        "optimized_grouped": {
+          "median_ms": 1.342422,
+          "process_medians_ms": [
+            1.342422,
+            1.306639,
+            1.359923
+          ],
+          "range_min_ms": 1.306639,
+          "range_max_ms": 1.359923,
+          "global_input_tokens_per_second": 157923.5143643355
+        },
+        "native_grouped": {
+          "median_ms": 0.9108385,
+          "process_medians_ms": [
+            0.9108385,
+            0.877711,
+            0.919146
+          ],
+          "range_min_ms": 0.877711,
+          "range_max_ms": 0.919146,
+          "global_input_tokens_per_second": 232752.5681007116
+        },
+        "native_packed": {
+          "median_ms": 0.715253,
+          "process_medians_ms": [
+            0.715253,
+            0.691039,
+            0.716244
+          ],
+          "range_min_ms": 0.691039,
+          "range_max_ms": 0.716244,
+          "global_input_tokens_per_second": 296398.61699286825
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.853347393977387,
+      "packed_vs_previous_native_latency_reduction_percent": 21.47312613597251,
+      "packed_vs_baseline_speedup": 2.1053501348473893
+    },
+    {
+      "world_size": 8,
+      "hidden": 7168,
+      "tokens_rank_zero": 16,
+      "scenario": "skewed",
+      "total_input_tokens": 212,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.303738,
+          "process_medians_ms": [
+            1.303738,
+            1.318503,
+            1.2318099999999998
+          ],
+          "range_min_ms": 1.2318099999999998,
+          "range_max_ms": 1.318503,
+          "global_input_tokens_per_second": 162609.35862880424
+        },
+        "optimized_grouped": {
+          "median_ms": 1.1545785,
+          "process_medians_ms": [
+            1.1545785,
+            1.1637415,
+            1.0823874999999998
+          ],
+          "range_min_ms": 1.0823874999999998,
+          "range_max_ms": 1.1637415,
+          "global_input_tokens_per_second": 183616.79175560607
+        },
+        "native_grouped": {
+          "median_ms": 0.7565675000000001,
+          "process_medians_ms": [
+            0.7565675000000001,
+            0.75712,
+            0.7323965
+          ],
+          "range_min_ms": 0.7323965,
+          "range_max_ms": 0.75712,
+          "global_input_tokens_per_second": 280212.93539571814
+        },
+        "native_packed": {
+          "median_ms": 0.5906215,
+          "process_medians_ms": [
+            0.5906215,
+            0.5968804999999999,
+            0.5828344999999999
+          ],
+          "range_min_ms": 0.5828344999999999,
+          "range_max_ms": 0.5968804999999999,
+          "global_input_tokens_per_second": 358943.92601691606
+        }
+      },
+      "three_collective_latency_reduction_percent": 11.440910673770354,
+      "packed_vs_previous_native_latency_reduction_percent": 21.934064045838607,
+      "packed_vs_baseline_speedup": 2.207400170836991
+    },
+    {
+      "world_size": 8,
+      "hidden": 7168,
+      "tokens_rank_zero": 64,
+      "scenario": "balanced",
+      "total_input_tokens": 596,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.4674165000000001,
+          "process_medians_ms": [
+            1.4674165000000001,
+            1.43951,
+            1.4939654999999998
+          ],
+          "range_min_ms": 1.43951,
+          "range_max_ms": 1.4939654999999998,
+          "global_input_tokens_per_second": 406155.9891142017
+        },
+        "optimized_grouped": {
+          "median_ms": 1.3189235,
+          "process_medians_ms": [
+            1.3189235,
+            1.287285,
+            1.339971
+          ],
+          "range_min_ms": 1.287285,
+          "range_max_ms": 1.339971,
+          "global_input_tokens_per_second": 451883.676346657
+        },
+        "native_grouped": {
+          "median_ms": 0.8961605,
+          "process_medians_ms": [
+            0.8961605,
+            0.884926,
+            0.916183
+          ],
+          "range_min_ms": 0.884926,
+          "range_max_ms": 0.916183,
+          "global_input_tokens_per_second": 665059.439687422
+        },
+        "native_packed": {
+          "median_ms": 0.7045669999999999,
+          "process_medians_ms": [
+            0.7045669999999999,
+            0.693805,
+            0.7167954999999999
+          ],
+          "range_min_ms": 0.693805,
+          "range_max_ms": 0.7167954999999999,
+          "global_input_tokens_per_second": 845909.6154091804
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.119349209989137,
+      "packed_vs_previous_native_latency_reduction_percent": 21.379373449287275,
+      "packed_vs_baseline_speedup": 2.082721018724976
+    },
+    {
+      "world_size": 8,
+      "hidden": 7168,
+      "tokens_rank_zero": 64,
+      "scenario": "skewed",
+      "total_input_tokens": 596,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.3397715,
+          "process_medians_ms": [
+            1.3397715,
+            1.347241,
+            1.2505519999999999
+          ],
+          "range_min_ms": 1.2505519999999999,
+          "range_max_ms": 1.347241,
+          "global_input_tokens_per_second": 444851.9766243722
+        },
+        "optimized_grouped": {
+          "median_ms": 1.172536,
+          "process_medians_ms": [
+            1.1746915,
+            1.172536,
+            1.0892415
+          ],
+          "range_min_ms": 1.0892415,
+          "range_max_ms": 1.1746915,
+          "global_input_tokens_per_second": 508299.95838080876
+        },
+        "native_grouped": {
+          "median_ms": 0.8146279999999999,
+          "process_medians_ms": [
+            0.8214395000000001,
+            0.8146279999999999,
+            0.7854574999999999
+          ],
+          "range_min_ms": 0.7854574999999999,
+          "range_max_ms": 0.8214395000000001,
+          "global_input_tokens_per_second": 731622.286491503
+        },
+        "native_packed": {
+          "median_ms": 0.653776,
+          "process_medians_ms": [
+            0.658072,
+            0.653776,
+            0.6383114999999999
+          ],
+          "range_min_ms": 0.6383114999999999,
+          "range_max_ms": 0.658072,
+          "global_input_tokens_per_second": 911627.2240033284
+        }
+      },
+      "three_collective_latency_reduction_percent": 12.482389720933751,
+      "packed_vs_previous_native_latency_reduction_percent": 19.745454366901193,
+      "packed_vs_baseline_speedup": 2.049282170039891
+    },
+    {
+      "world_size": 8,
+      "hidden": 7168,
+      "tokens_rank_zero": 256,
+      "scenario": "balanced",
+      "total_input_tokens": 2132,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.4848465000000002,
+          "process_medians_ms": [
+            1.4848465000000002,
+            1.472801,
+            1.5354165
+          ],
+          "range_min_ms": 1.472801,
+          "range_max_ms": 1.5354165,
+          "global_input_tokens_per_second": 1435838.654029221
+        },
+        "optimized_grouped": {
+          "median_ms": 1.3402885,
+          "process_medians_ms": [
+            1.3402885,
+            1.328992,
+            1.371897
+          ],
+          "range_min_ms": 1.328992,
+          "range_max_ms": 1.371897,
+          "global_input_tokens_per_second": 1590702.3002883336
+        },
+        "native_grouped": {
+          "median_ms": 0.9543619999999999,
+          "process_medians_ms": [
+            0.9543619999999999,
+            0.947104,
+            0.983499
+          ],
+          "range_min_ms": 0.947104,
+          "range_max_ms": 0.983499,
+          "global_input_tokens_per_second": 2233953.154044273
+        },
+        "native_packed": {
+          "median_ms": 0.7499275,
+          "process_medians_ms": [
+            0.7481125,
+            0.7499275,
+            0.7664275
+          ],
+          "range_min_ms": 0.7481125,
+          "range_max_ms": 0.7664275,
+          "global_input_tokens_per_second": 2842941.484343487
+        }
+      },
+      "three_collective_latency_reduction_percent": 9.735551789360052,
+      "packed_vs_previous_native_latency_reduction_percent": 21.421064543642764,
+      "packed_vs_baseline_speedup": 1.9799867320507651
+    },
+    {
+      "world_size": 8,
+      "hidden": 7168,
+      "tokens_rank_zero": 256,
+      "scenario": "skewed",
+      "total_input_tokens": 2132,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.781243,
+          "process_medians_ms": [
+            1.781243,
+            1.7864754999999999,
+            1.7753635
+          ],
+          "range_min_ms": 1.7753635,
+          "range_max_ms": 1.7864754999999999,
+          "global_input_tokens_per_second": 1196916.9843755176
+        },
+        "optimized_grouped": {
+          "median_ms": 1.5933454999999999,
+          "process_medians_ms": [
+            1.5976789999999998,
+            1.5933365,
+            1.5933454999999999
+          ],
+          "range_min_ms": 1.5933365,
+          "range_max_ms": 1.5976789999999998,
+          "global_input_tokens_per_second": 1338065.09636485
+        },
+        "native_grouped": {
+          "median_ms": 1.2286074999999999,
+          "process_medians_ms": [
+            1.232217,
+            1.2286074999999999,
+            1.2160955
+          ],
+          "range_min_ms": 1.2160955,
+          "range_max_ms": 1.232217,
+          "global_input_tokens_per_second": 1735297.888056194
+        },
+        "native_packed": {
+          "median_ms": 0.9933765,
+          "process_medians_ms": [
+            0.994922,
+            0.9933765,
+            0.992496
+          ],
+          "range_min_ms": 0.992496,
+          "range_max_ms": 0.994922,
+          "global_input_tokens_per_second": 2146215.458086637
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.54867303338175,
+      "packed_vs_previous_native_latency_reduction_percent": 19.146147162539695,
+      "packed_vs_baseline_speedup": 1.7931197285218645
+    },
+    {
+      "world_size": 8,
+      "hidden": 7168,
+      "tokens_rank_zero": 512,
+      "scenario": "balanced",
+      "total_input_tokens": 4180,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 1.552384,
+          "process_medians_ms": [
+            1.552384,
+            1.5414055,
+            1.580948
+          ],
+          "range_min_ms": 1.5414055,
+          "range_max_ms": 1.580948,
+          "global_input_tokens_per_second": 2692632.7506596306
+        },
+        "optimized_grouped": {
+          "median_ms": 1.39604,
+          "process_medians_ms": [
+            1.396051,
+            1.3679595,
+            1.39604
+          ],
+          "range_min_ms": 1.3679595,
+          "range_max_ms": 1.396051,
+          "global_input_tokens_per_second": 2994183.5477493485
+        },
+        "native_grouped": {
+          "median_ms": 1.0439525,
+          "process_medians_ms": [
+            1.0439525,
+            1.014163,
+            1.048264
+          ],
+          "range_min_ms": 1.014163,
+          "range_max_ms": 1.048264,
+          "global_input_tokens_per_second": 4004013.5925724586
+        },
+        "native_packed": {
+          "median_ms": 0.8415915,
+          "process_medians_ms": [
+            0.8415915,
+            0.827841,
+            0.842494
+          ],
+          "range_min_ms": 0.827841,
+          "range_max_ms": 0.842494,
+          "global_input_tokens_per_second": 4966780.201558595
+        }
+      },
+      "three_collective_latency_reduction_percent": 10.071219492084438,
+      "packed_vs_previous_native_latency_reduction_percent": 19.384119488195108,
+      "packed_vs_baseline_speedup": 1.844581367563717
+    },
+    {
+      "world_size": 8,
+      "hidden": 7168,
+      "tokens_rank_zero": 512,
+      "scenario": "skewed",
+      "total_input_tokens": 4180,
+      "experts": 32,
+      "top_k": 2,
+      "expert_intermediate": 128,
+      "samples_per_method_per_process_launch": 72,
+      "methods": {
+        "baseline_grouped": {
+          "median_ms": 2.5666895,
+          "process_medians_ms": [
+            2.5695785,
+            2.5666895,
+            2.5610105
+          ],
+          "range_min_ms": 2.5610105,
+          "range_max_ms": 2.5695785,
+          "global_input_tokens_per_second": 1628556.940759683
+        },
+        "optimized_grouped": {
+          "median_ms": 2.3701809999999996,
+          "process_medians_ms": [
+            2.381656,
+            2.3648845,
+            2.3701809999999996
+          ],
+          "range_min_ms": 2.3648845,
+          "range_max_ms": 2.381656,
+          "global_input_tokens_per_second": 1763578.3933800838
+        },
+        "native_grouped": {
+          "median_ms": 1.87426,
+          "process_medians_ms": [
+            1.875222,
+            1.8734354999999998,
+            1.87426
+          ],
+          "range_min_ms": 1.8734354999999998,
+          "range_max_ms": 1.875222,
+          "global_input_tokens_per_second": 2230213.524270912
+        },
+        "native_packed": {
+          "median_ms": 1.5929745,
+          "process_medians_ms": [
+            1.587834,
+            1.5929745,
+            1.5965630000000002
+          ],
+          "range_min_ms": 1.587834,
+          "range_max_ms": 1.5965630000000002,
+          "global_input_tokens_per_second": 2624021.9162328085
+        }
+      },
+      "three_collective_latency_reduction_percent": 7.65610721515011,
+      "packed_vs_previous_native_latency_reduction_percent": 15.00781641821306,
+      "packed_vs_baseline_speedup": 1.611255861283404
+    }
+  ]
+}
