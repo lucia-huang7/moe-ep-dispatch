@@ -2,12 +2,13 @@
 set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.."
 if [[ ! -f /usr/include/python3.12/Python.h ]]; then
-    echo "Install matching Python development headers from the fixed Ubuntu snapshot; see docs/GPU_VALIDATION.md." >&2
+    echo "Install Python 3.12 development headers matching the selected runtime; see README.md." >&2
     exit 1
 fi
+: "${REQUIREMENTS_LOCK:?Set REQUIREMENTS_LOCK to the external dependency lock file path}"
 python3 -m venv .venv
 .venv/bin/python -m pip install --no-deps uv==0.6.17
-.venv/bin/uv pip sync environment/requirements-linux.lock --python .venv/bin/python --require-hashes
+.venv/bin/uv pip sync "$REQUIREMENTS_LOCK" --python .venv/bin/python --require-hashes
 mkdir -p vendor results
 if [[ ! -d vendor/DeepEP/.git ]]; then
     git clone https://github.com/deepseek-ai/DeepEP.git vendor/DeepEP
@@ -32,4 +33,4 @@ env -u NVSHMEM_DIR .venv/bin/python -m pip install --no-clean --no-build-isolati
 .venv/bin/python -c 'import torch,deep_ep; print(torch.__version__,torch.version.cuda,deep_ep.__file__)'
 .venv/bin/python -m pip freeze > results/gpu-package-versions.txt
 
-.venv/bin/python -m scripts.record_build_manifest --output results/deepep-build-manifest.json
+.venv/bin/python -m scripts.record_build_manifest --requirements-lock "$REQUIREMENTS_LOCK" --output results/deepep-build-manifest.json

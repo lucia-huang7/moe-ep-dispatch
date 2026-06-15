@@ -18,6 +18,7 @@ def digest(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, default=Path('results/deepep-build-manifest.json'))
+    parser.add_argument('--requirements-lock', type=Path, required=True)
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     source = root / 'vendor/DeepEP'
@@ -31,7 +32,7 @@ def main():
                'patch_sha256':digest(root/'patches/deepep-v1.2.1-zero-copy-layout.patch'),
                'torch':torch.__version__, 'cuda_runtime':torch.version.cuda,
                'nvshmem':importlib.metadata.version('nvidia-nvshmem-cu12'),
-               'python':sys.version.split()[0], 'requirements_sha256':digest(root/'environment/requirements-linux.lock')}
+               'python':sys.version.split()[0], 'requirements_sha256':digest(args.requirements_lock)}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(payload,indent=2)+'\n')
     archive = args.output.parent/'builds'/f'{payload["extension_sha256"][:20]}.json'
